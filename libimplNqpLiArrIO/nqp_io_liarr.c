@@ -25,7 +25,7 @@ nqp_writer * nqp_write_init(nqp_init_args * args)
 
 int nqp_write_start(nqp_start_args * args)
 {
-	printf("Start queue nqp-io\n");
+	printf("Start liarr nqp-io\n");
 
 	if (fopen_s(&_out, args->out_filename, "wb") != 0)
 	{
