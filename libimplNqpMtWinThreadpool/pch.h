@@ -7,14 +7,16 @@
 #ifndef PCH_H
 #define PCH_H
 
+#include "WinapiConfig.h"
+
 #include "nqp_io.h"
 #include "nqp_mt.h"
 #include "nqp_iteration.h"
 #include "nqp_field.h"
 #include "nqp_fail_alloc_check.h"
 
-#include <omp.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <omp.h>
 
 #endif //PCH_H

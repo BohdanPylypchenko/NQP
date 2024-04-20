@@ -80,7 +80,7 @@ void nqp_write_wait()
 
 void nqp_write_end()
 {
-	printf("End queue nqp-io\n");
+	printf("End liarr nqp-io\n");
 	for (int i = 0; i < _liarr_count; i++)
 		nqp_liarr_free(_liarr_arr[i]);
 }
