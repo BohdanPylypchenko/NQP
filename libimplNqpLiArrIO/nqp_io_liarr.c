@@ -19,13 +19,15 @@ static unsigned long long _fill;
 
 nqp_writer * nqp_write_init(nqp_init_args * args)
 {
-	return nqp_liarr_new(args->solution_capacity_incr_coef,
-		args->dim, args->head_solution_capacity);
+	return nqp_liarr_new(
+		args->solution_capacity_incr_coef,
+		args->dim, args->head_solution_capacity
+	);
 }
 
 int nqp_write_start(nqp_start_args * args)
 {
-	printf("Start liarr nqp-io\n");
+	//printf("Start liarr nqp-io\n");
 
 	if (fopen_s(&_out, args->out_filename, "wb") != 0)
 	{
@@ -57,7 +59,7 @@ int nqp_write_start(nqp_start_args * args)
 void nqp_write_notify_computation_complete(unsigned long long s_count)
 {
 	_s_count = s_count;
-	printf("s_count updated: %llu;\n", _s_count);
+	//printf("s_count updated: %llu;\n", _s_count);
 }
 
 void nqp_write_wait()
@@ -72,15 +74,15 @@ void nqp_write_wait()
 			if (fwrite(current->solutions, sizeof(int), int_count, _out) != int_count)
 				fprintf(stderr, "Error: failed to write solution\n");
 			_fill += int_count;
-			nqp_liarr_element_free(current);
+			nqp_liarr_element_free(current, _liarr_arr[i]->heap);
 		}
 	}
-	printf("total fill = %llu; total fill / dim = %llu\n", _fill, _fill / _dim);
+	//printf("total fill = %llu; total fill / dim = %llu\n", _fill, _fill / _dim);
 }
 
 void nqp_write_end()
 {
-	printf("End liarr nqp-io\n");
+	//printf("End liarr nqp-io\n");
 	for (int i = 0; i < _liarr_count; i++)
 		nqp_liarr_free(_liarr_arr[i]);
 }

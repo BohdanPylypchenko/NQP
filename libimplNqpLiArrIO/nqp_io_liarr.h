@@ -1,6 +1,7 @@
 #pragma once
 
 #include "nqp_io.h"
+#include "WinapiConfig.h"
 
 typedef struct nqp_liarr_element
 {
@@ -16,6 +17,7 @@ typedef struct nqp_writer
 	int solution_capacity_incr_coef;
 	nqp_liarr_element * head;
 	nqp_liarr_element * last;
+	HANDLE heap;
 } nqp_liarr;
 
 struct nqp_init_args

@@ -9,9 +9,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int nqp_validate_solutions(int expected_dim, unsigned long long expected_solution_count,
-	FILE * solution_stream)
-{
+int nqp_validate_solutions(
+	int expected_dim, unsigned long long expected_solution_count,
+	FILE * solution_stream
+) {
 	int actual_dim = -1;
 	fread(&actual_dim, sizeof(int), 1, solution_stream);
 	if (expected_dim != actual_dim)
@@ -20,11 +21,14 @@ int nqp_validate_solutions(int expected_dim, unsigned long long expected_solutio
 		return 1;
 	}
 
+	HANDLE heap = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
+	nqp_fail_alloc_check(heap);
+
 	size_t read_count;
 	unsigned long long actual_solution_count = 0;
-	int * solution = (int *)malloc(actual_dim * sizeof(int));
+	int * solution = (int *)HeapAlloc(heap, 0, actual_dim * sizeof(int));
 	nqp_fail_alloc_check(solution);
-	int ** field = field_alloc(actual_dim);
+	int ** field = field_alloc(actual_dim, heap);
 	unsigned long long invalid_solution_count = 0;
 	while ((read_count = fread(solution, sizeof(int), actual_dim, solution_stream)) == actual_dim)
 	{
@@ -41,8 +45,7 @@ int nqp_validate_solutions(int expected_dim, unsigned long long expected_solutio
 			for (int j = 0; j < actual_dim; j++)
 				field[i][j] = 0;
 	}
-	free(solution);
-	field_free(field, actual_dim);
+	HeapDestroy(heap);
 
 	if (ferror(solution_stream))
 	{

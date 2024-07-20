@@ -12,35 +12,47 @@
 static void _nqp_liarr_element_write_solution(nqp_liarr_element * element,
 	int dim, int * solution);
 
-nqp_liarr_element * nqp_liarr_element_new(int dim, unsigned long long solution_capacity)
-{
-	nqp_liarr_element * element = (nqp_liarr_element *)malloc(sizeof(nqp_liarr_element));
+nqp_liarr_element * nqp_liarr_element_new(
+	int dim, unsigned long long solution_capacity,
+	HANDLE heap
+) {
+	nqp_liarr_element * element = (nqp_liarr_element *)HeapAlloc(heap, 0, sizeof(nqp_liarr_element));
 	nqp_fail_alloc_check(element);
 
 	element->solution_capacity = solution_capacity;
 	element->solution_fill = 0;
-	element->solutions = (int *)malloc(dim * solution_capacity * sizeof(int));
+
+	element->solutions = (int *)HeapAlloc(heap, 0, dim * solution_capacity * sizeof(int));
+	nqp_fail_alloc_check(element->solutions);
+
 	element->solution_write_ptr = element->solutions;
 	element->next = NULL;
 
 	return element;
 }
 
-void nqp_liarr_element_free(nqp_liarr_element * element)
-{
-	free(element->solutions);
-	free(element);
+void nqp_liarr_element_free(
+	nqp_liarr_element * element,
+	HANDLE heap
+) {
+	HeapFree(heap, 0, element->solutions);
+	HeapFree(heap, 0, element);
 }
 
-nqp_liarr * nqp_liarr_new(int solution_capacity_incr_coef,
-	int head_dim, unsigned long long head_solution_capacity)
-{
-	nqp_liarr * liarr = (nqp_liarr *)malloc(sizeof(nqp_liarr));
+nqp_liarr * nqp_liarr_new(
+	int solution_capacity_incr_coef,
+	int head_dim, unsigned long long head_solution_capacity
+) {
+	HANDLE heap = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
+	nqp_fail_alloc_check(heap);
+
+	nqp_liarr * liarr = (nqp_liarr *)HeapAlloc(heap, 0, sizeof(nqp_liarr));
 	nqp_fail_alloc_check(liarr);
+	liarr->heap = heap;
 
 	liarr->solution_capacity_incr_coef = solution_capacity_incr_coef;
 
-	liarr->head = nqp_liarr_element_new(head_dim, head_solution_capacity);
+	liarr->head = nqp_liarr_element_new(head_dim, head_solution_capacity, heap);
 	nqp_fail_alloc_check(liarr->head);
 	liarr->last = liarr->head;
 
@@ -49,7 +61,8 @@ nqp_liarr * nqp_liarr_new(int solution_capacity_incr_coef,
 
 void nqp_liarr_free(nqp_liarr * liarr)
 {
-	free(liarr);
+	HANDLE heap = liarr->heap;
+	HeapDestroy(heap);
 }
 
 void nqp_liarr_append(nqp_liarr * liarr, int dim, int * solution)
@@ -60,8 +73,10 @@ void nqp_liarr_append(nqp_liarr * liarr, int dim, int * solution)
 	}
 	else
 	{
-		nqp_liarr_element * next =
-			nqp_liarr_element_new(dim, liarr->solution_capacity_incr_coef * liarr->last->solution_capacity);
+		nqp_liarr_element * next = nqp_liarr_element_new(
+			dim, liarr->solution_capacity_incr_coef * liarr->last->solution_capacity,
+			liarr->heap
+		);
 		_nqp_liarr_element_write_solution(next, dim, solution);
 		liarr->last->next = next;
 		liarr->last = next;
@@ -82,9 +97,10 @@ nqp_liarr_element * nqp_liarr_pop(nqp_liarr * liarr)
 	}
 }
 
-static void _nqp_liarr_element_write_solution(nqp_liarr_element * element,
-	int dim, int * solution)
-{
+static void _nqp_liarr_element_write_solution(
+	nqp_liarr_element * element,
+	int dim, int * solution
+) {
 	errno_t error = memcpy_s(element->solution_write_ptr, dim * sizeof(int),
 		solution, dim * sizeof(int));
 	if (error != 0)

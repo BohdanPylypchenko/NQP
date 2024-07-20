@@ -9,6 +9,7 @@
 
 #include "nqp_io.h"
 #include "nqp_fail_alloc_check.h"
+#include "WinapiConfig.h"
 
 #include <stdio.h>
 #include <stdlib.h>

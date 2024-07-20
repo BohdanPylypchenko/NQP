@@ -7,7 +7,6 @@
 #include "nqp_fail_alloc_check.h"
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int write_concat(int dim, int file_count, char ** filename_arr)
 {
@@ -33,8 +32,6 @@ int write_concat(int dim, int file_count, char ** filename_arr)
 		return -1;
 	}
 
-	int * solution_buffer = (int *)malloc(dim * sizeof(int));
-	nqp_fail_alloc_check(solution_buffer);
 	FILE * tmp; int tmp_dim = -1;
 	for (int i = 0; i < file_count; i++)
 	{
@@ -86,7 +83,6 @@ int write_concat(int dim, int file_count, char ** filename_arr)
 
 	fflush(out);
 	fclose(out);
-	free(solution_buffer);
 
 	return 0;
 }

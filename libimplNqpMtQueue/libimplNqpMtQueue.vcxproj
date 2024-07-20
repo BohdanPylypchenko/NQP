@@ -114,7 +114,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)libimplNqpQueueIO;$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpMt;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpFailAllocCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libhdrWinapiConfig;$(SolutionDir)libimplNqpQueueIO;$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpMt;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpFailAllocCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -137,7 +137,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
-      <AdditionalIncludeDirectories>$(SolutionDir)libimplNqpQueueIO;$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpMt;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpFailAllocCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libhdrWinapiConfig;$(SolutionDir)libimplNqpQueueIO;$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpMt;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpFailAllocCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -169,6 +169,9 @@
     </ProjectReference>
     <ProjectReference Include="..\libhdrNqpMt\libhdrNqpMt.vcxproj">
       <Project>{3e3e9990-9932-41c2-936f-24b6d3ae12a1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\libhdrWinapiConfig\libhdrWinapiConfig.vcxproj">
+      <Project>{f32b802a-c814-4324-bb7a-bb2415d8a5e7}</Project>
     </ProjectReference>
     <ProjectReference Include="..\libimplFileBufferAdjust\libimplFileBufferAdjust.vcxproj">
       <Project>{26c09355-6f76-4557-b241-229538d6e05a}</Project>

@@ -1,9 +1,17 @@
 #pragma once
 
 #include "nqp_io_queue.h"
+#include "WinapiConfig.h"
 
-nqp_queue_element * nqp_queue_element_new(int dim, int * solution);
-void nqp_queue_element_free(nqp_queue_element * element);
+nqp_queue_element * nqp_queue_element_new(
+    int dim, int * solution,
+    HANDLE heap
+);
+
+void nqp_queue_element_free(
+    nqp_queue_element * element,
+    HANDLE heap
+);
 
 nqp_queue * nqp_queue_new();
 void nqp_queue_free(nqp_queue * queue);

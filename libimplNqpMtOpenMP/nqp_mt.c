@@ -5,6 +5,7 @@
 #include "nqp_iteration.h"
 #include "nqp_field.h"
 #include "nqp_fail_alloc_check.h"
+#include "WinapiConfig.h"
 
 #include <omp.h>
 #include <stdio.h>
@@ -16,8 +17,10 @@ unsigned long long nqp_mt(
     nqp_writer ** writer_arr,
     nqp_start_args * start_args
 ) {
+    HANDLE global_heap = HeapCreate(0, 0, 0);
+
     unsigned long long total_s_count = 0;
-    nqp_state * state_arr = (nqp_state *)malloc(dim * sizeof(nqp_state));
+    nqp_state * state_arr = (nqp_state *)HeapAlloc(global_heap, 0, dim * sizeof(nqp_state));
     nqp_fail_alloc_check(state_arr);
     nqp_write_start(start_args);
     int i;
@@ -25,9 +28,12 @@ unsigned long long nqp_mt(
     double start_time_total = omp_get_wtime();
     #pragma omp parallel for reduction(+:total_s_count)
     for (i = 0; i < dim; i++) {
+        HANDLE local_heap = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
+        nqp_fail_alloc_check(local_heap);
+
         state_arr[i].dim = dim;
-        state_arr[i].field = field_alloc(dim);
-        state_arr[i].queens = (int *)malloc(dim * sizeof(int));
+        state_arr[i].field = field_alloc(dim, local_heap);
+        state_arr[i].queens = (int *)HeapAlloc(local_heap, 0, dim * sizeof(int));
         nqp_fail_alloc_check(state_arr[i].queens);
         state_arr[i].s_count = 0;
         state_arr[i].writer = writer_arr[i];
@@ -39,10 +45,12 @@ unsigned long long nqp_mt(
         nqp_iteration(1, &(state_arr[i]));
         total_s_count += state_arr[i].s_count;
         double end_time = omp_get_wtime();
-        printf(
-            "Iteration %d finished in %lf\n",
-            i, end_time - start_time
-        );
+        //printf(
+        //    "Iteration %d finished in %lf\n",
+        //    i, end_time - start_time
+        //);
+
+        HeapDestroy(local_heap);
     }
     double end_time_total = omp_get_wtime();
     printf("Comput time: %lf\n", end_time_total - start_time_total);
@@ -51,11 +59,7 @@ unsigned long long nqp_mt(
     nqp_write_wait();
     nqp_write_end();
 
-    for (int i = 0; i < dim; i++) {
-        field_free(state_arr[i].field, dim);
-        free(state_arr[i].queens);
-    }
-    free(state_arr);
+    HeapDestroy(global_heap);
 
     return total_s_count;
 }
