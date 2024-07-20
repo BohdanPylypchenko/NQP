@@ -15,6 +15,7 @@
 #include "liarr_adjust.h"
 #include "liarr_adjust_const.h"
 #include "nqp_fail_alloc_check.h"
+#include "WinapiConfig.h"
 
 #include <stdio.h>
 #include <stdlib.h>

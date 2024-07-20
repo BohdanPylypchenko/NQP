@@ -1,6 +1,7 @@
 #pragma once
 
 #include "nqp_io.h"
+#include "WinapiConfig.h"
 
 typedef struct nqp_queue_element
 {
@@ -13,6 +14,7 @@ typedef struct nqp_writer
 {
 	nqp_queue_element * head;
 	nqp_queue_element * last;
+	HANDLE heap;
 } nqp_queue;
 
 struct nqp_start_args

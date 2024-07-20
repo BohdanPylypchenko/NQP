@@ -24,7 +24,7 @@ static HANDLE _writer_thread = NULL;
 
 static DWORD WINAPI _nqp_ping_write_loop(LPVOID arg);
 static int _check_to_continue();
-static int _write_free_solution(nqp_queue_element * element);
+static int _write_solution(nqp_queue_element * element);
 
 nqp_writer * nqp_write_init(nqp_init_args * args)
 {
@@ -33,7 +33,7 @@ nqp_writer * nqp_write_init(nqp_init_args * args)
 
 int nqp_write_start(nqp_start_args * args)
 {
-	printf("Start queue nqp-io\n");
+	//printf("Start queue nqp-io\n");
 
 	if (fopen_s(&_out, args->out_filename, "wb") != 0)
 	{
@@ -81,30 +81,37 @@ void nqp_write_notify_computation_complete(unsigned long long max_write_count)
 {
 	_max_write_count = max_write_count;
 	_is_computation_completed = 1;
-	printf("max_write_count updated: %llu; flag updated: %d\n",
-		_max_write_count, _is_computation_completed);
+	//printf(
+	//	"max_write_count updated: %llu; flag updated: %d\n",
+	//	_max_write_count, _is_computation_completed
+	//);
 }
 
 void nqp_write_wait()
 {
 	WaitForSingleObject(_writer_thread, INFINITE);
-	printf("Finished calculating, wait for write\n");
+	//printf("Finished calculating, wait for write\n");
 }
 
 void nqp_write_end()
 {
-	printf("End queue nqp-io\n");
+	//printf("End queue nqp-io\n");
 	for (int i = 0; i < _queue_count; i++)
 		nqp_queue_free(_queue_arr[i]);
 }
 
 void nqp_write_solution(int dim, int * solution, nqp_writer * writer)
 {
-	int * solution_copy = (int *)malloc(dim * sizeof(int));
+	int * solution_copy = (int *)HeapAlloc(writer->heap, 0, dim * sizeof(int));
 	nqp_fail_alloc_check(solution_copy);
+
 	memcpy_s(solution_copy, dim * sizeof(int), solution, dim * sizeof(int));
 
-	nqp_queue_element * element = nqp_queue_element_new(dim, solution_copy);
+	nqp_queue_element * element = nqp_queue_element_new(
+		dim, solution_copy,
+		writer->heap
+	);
+
 	nqp_queue_append(writer, element);
 }
 
@@ -132,15 +139,17 @@ static DWORD WINAPI _nqp_ping_write_loop(LPVOID arg)
 
 	for (unsigned long long i = 0; _check_to_continue(); i++)
 	{
-		nqp_queue_element * element = nqp_queue_pop_safe(_queue_arr[i % _queue_count]);
+		nqp_queue * current_queue = _queue_arr[i % _queue_count];
+
+		nqp_queue_element * element = nqp_queue_pop_safe(current_queue);
 
 		if (element == NULL)
 			continue;
 
-		if (_write_free_solution(element) != 0)
+		if (_write_solution(element) != 0)
 			fprintf(stderr, "Error: failed to write solution #%llu\n", _write_count);
 
-		nqp_queue_element_free(element);
+		nqp_queue_element_free(element, current_queue->heap);
 		element = NULL;
 	}
 
@@ -149,15 +158,15 @@ static DWORD WINAPI _nqp_ping_write_loop(LPVOID arg)
 		nqp_queue_element * element;
 		while ((element = nqp_queue_pop(_queue_arr[i])) != NULL)
 		{
-			if (_write_free_solution(element) != 0)
+			if (_write_solution(element) != 0)
 				fprintf(stderr, "Error: failed to write solution #%llu\n", _write_count);
 
-			nqp_queue_element_free(element);
+			nqp_queue_element_free(element, _queue_arr[i]->heap);
 			element = NULL;
 		}
 	}
 
-	printf("_write_count = %llu | _max_write_count = %llu\n", _write_count, _max_write_count);
+	//printf("_write_count = %llu | _max_write_count = %llu\n", _write_count, _max_write_count);
 
 	return 0;
 }
@@ -170,7 +179,7 @@ static int _check_to_continue()
 		return 0;
 }
 
-static int _write_free_solution(nqp_queue_element * element)
+static int _write_solution(nqp_queue_element * element)
 {
 	size_t w = fwrite(element->solution, sizeof(int), element->dim, _out);
 	_write_count++;

@@ -5,13 +5,17 @@
 #include "nqp_io.h"
 #include "nqp_fail_alloc_check.h"
 #include "file_buffer_adjust.h"
+#include "WinapiConfig.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 
 nqp_writer * nqp_write_init(nqp_init_args * args)
 {
-	nqp_writer * writer = (nqp_writer *)malloc(sizeof(nqp_writer));
+	HANDLE heap = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
+	nqp_fail_alloc_check(heap);
+
+	nqp_writer * writer = (nqp_writer *)HeapAlloc(heap, 0, sizeof(nqp_writer));
 	nqp_fail_alloc_check(writer);
 
 	writer->id = args->id;
@@ -20,7 +24,7 @@ nqp_writer * nqp_write_init(nqp_init_args * args)
 	if (error != 0)
 	{
 		fprintf(stderr, "Error: can't open file %s; Errno = %d\n", args->out_filename, error);
-		free(writer);
+		HeapDestroy(heap);
 		return NULL;
 	}
 
@@ -29,14 +33,14 @@ nqp_writer * nqp_write_init(nqp_init_args * args)
 	{
 		fprintf(stderr, "Error: can't resize writer buffer\n");
 		fclose(writer->out);
-		free(writer);
+		HeapDestroy(heap);
 		return NULL;
 	}
 
 	if (fwrite(&(args->dim), sizeof(int), 1, writer->out) != 1)
 	{
 		fclose(writer->out);
-		free(writer);
+		HeapDestroy(heap);
 		return NULL;
 	}
 
@@ -45,23 +49,23 @@ nqp_writer * nqp_write_init(nqp_init_args * args)
 
 int nqp_write_start(nqp_start_args * nqp_start_args)
 {
-	printf("Start fwrite nqp-io\n");
+	//printf("Start fwrite nqp-io\n");
 	return 0;
 }
 
 void nqp_write_notify_computation_complete(unsigned long long s_count)
 {
-	printf("Computation nqp completed; solution count = %lld\n", s_count);
+	//printf("Computation nqp completed; solution count = %lld\n", s_count);
 }
 
 void nqp_write_wait()
 {
-	printf("Wait fwrite nqp-io\n");
+	//printf("Wait fwrite nqp-io\n");
 }
 
 void nqp_write_end()
 {
-	printf("End fwrite nqp-io\n");
+	//printf("End fwrite nqp-io\n");
 }
 
 void nqp_write_solution(int dim, int * queens, nqp_writer * writer)
@@ -85,5 +89,6 @@ void nqp_write_close(nqp_writer * writer)
 		fprintf(stderr, "Error when closing stream\n");
 	}
 
-	free(writer);
+	HANDLE heap = writer->heap;
+	HeapDestroy(heap);
 }

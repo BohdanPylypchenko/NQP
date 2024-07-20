@@ -12,6 +12,7 @@
 #include "nqp_iteration.h"
 #include "nqp_field.h"
 #include "nqp_fail_alloc_check.h"
+#include "WinapiConfig.h"
 
 #include <omp.h>
 #include <stdio.h>
