@@ -25,7 +25,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{e87efd8d-7bdb-4d65-b7a2-8eb3361c147c}</ProjectGuid>
-    <RootNamespace>libhdrNqpFailAllocCheck</RootNamespace>
+    <RootNamespace>libhdrNqpNullCheck</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

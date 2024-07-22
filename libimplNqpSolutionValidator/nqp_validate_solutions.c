@@ -4,7 +4,7 @@
 #include "nqp_iteration.h"
 #include "nqp_field.h"
 #include "nqp_io.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,13 +21,17 @@ int nqp_validate_solutions(
 		return 1;
 	}
 
+	unsigned long long injected_solution_count = -1;
+	fread(&injected_solution_count, sizeof(unsigned long long), 1, solution_stream);
+	printf("injected solution count = %llu\n", injected_solution_count);
+
 	HANDLE heap = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
-	nqp_fail_alloc_check(heap);
+	nqp_null_check(heap);
 
 	size_t read_count;
 	unsigned long long actual_solution_count = 0;
 	int * solution = (int *)HeapAlloc(heap, 0, actual_dim * sizeof(int));
-	nqp_fail_alloc_check(solution);
+	nqp_null_check(solution);
 	int ** field = field_alloc(actual_dim, heap);
 	unsigned long long invalid_solution_count = 0;
 	while ((read_count = fread(solution, sizeof(int), actual_dim, solution_stream)) == actual_dim)

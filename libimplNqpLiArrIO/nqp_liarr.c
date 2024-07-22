@@ -3,7 +3,7 @@
 #include "nqp_io_liarr.h"
 #include "nqp_liarr.h"
 
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,13 +17,13 @@ nqp_liarr_element * nqp_liarr_element_new(
 	HANDLE heap
 ) {
 	nqp_liarr_element * element = (nqp_liarr_element *)HeapAlloc(heap, 0, sizeof(nqp_liarr_element));
-	nqp_fail_alloc_check(element);
+	nqp_null_check(element);
 
 	element->solution_capacity = solution_capacity;
 	element->solution_fill = 0;
 
 	element->solutions = (int *)HeapAlloc(heap, 0, dim * solution_capacity * sizeof(int));
-	nqp_fail_alloc_check(element->solutions);
+	nqp_null_check(element->solutions);
 
 	element->solution_write_ptr = element->solutions;
 	element->next = NULL;
@@ -44,16 +44,16 @@ nqp_liarr * nqp_liarr_new(
 	int head_dim, unsigned long long head_solution_capacity
 ) {
 	HANDLE heap = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
-	nqp_fail_alloc_check(heap);
+	nqp_null_check(heap);
 
 	nqp_liarr * liarr = (nqp_liarr *)HeapAlloc(heap, 0, sizeof(nqp_liarr));
-	nqp_fail_alloc_check(liarr);
+	nqp_null_check(liarr);
 	liarr->heap = heap;
 
 	liarr->solution_capacity_incr_coef = solution_capacity_incr_coef;
 
 	liarr->head = nqp_liarr_element_new(head_dim, head_solution_capacity, heap);
-	nqp_fail_alloc_check(liarr->head);
+	nqp_null_check(liarr->head);
 	liarr->last = liarr->head;
 
 	return liarr;

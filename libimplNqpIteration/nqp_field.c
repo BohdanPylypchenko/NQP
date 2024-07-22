@@ -2,7 +2,7 @@
 
 #include "nqp_field.h"
 
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 #include "WinapiConfig.h"
 
 #include <stdio.h>
@@ -13,12 +13,12 @@ int ** field_alloc(
 	HANDLE heap
 ) {
 	int ** field = (int **)HeapAlloc(heap, 0, dim * sizeof(int *));
-	nqp_fail_alloc_check(field);
+	nqp_null_check(field);
 
 	for (int i = 0; i < dim; i++)
 	{
 		field[i] = (int *)HeapAlloc(heap, 0, dim * sizeof(int));
-		nqp_fail_alloc_check(field[i]);
+		nqp_null_check(field[i]);
 		for (int j = 0; j < dim; field[i][j++] = 0);
 	}
 

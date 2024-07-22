@@ -3,7 +3,7 @@
 #include "nqp_io_queue.h"
 #include "nqp_queue.h"
 
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 #include "WinapiConfig.h"
 
 #include <stdlib.h>
@@ -14,7 +14,7 @@ nqp_queue_element * nqp_queue_element_new(
 ) {
 	nqp_queue_element * element =
 		(nqp_queue_element *)HeapAlloc(heap, 0, sizeof(nqp_queue_element));
-	nqp_fail_alloc_check(element);
+	nqp_null_check(element);
 
 	element->dim = dim;
 	element->solution = solution;
@@ -36,15 +36,15 @@ static nqp_queue_element * _nqp_queue_get_headnext(nqp_queue * queue);
 nqp_queue * nqp_queue_new()
 {
 	HANDLE heap = HeapCreate(0, 0, 0);
-	nqp_fail_alloc_check(heap);
+	nqp_null_check(heap);
 
 	nqp_queue * queue = (nqp_queue *)HeapAlloc(heap, 0, sizeof(nqp_queue));
-	nqp_fail_alloc_check(queue);
+	nqp_null_check(queue);
 
 	queue->heap = heap;
 
 	queue->head = (nqp_queue_element *)HeapAlloc(heap, 0, sizeof(nqp_queue_element));
-	nqp_fail_alloc_check(queue->head);
+	nqp_null_check(queue->head);
 
 	queue->head->dim = -1;
 	queue->head->solution = NULL;

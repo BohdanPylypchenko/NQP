@@ -4,12 +4,17 @@
 #include "file_buffer_adjust.h"
 #include "file_buffer_adjust_const.h"
 #include "nqp_io_const.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 
 #include <stdio.h>
 
-int write_concat(int dim, int file_count, char ** filename_arr)
-{
+#define TBUFSIZE 4096
+
+int write_concat(
+	int dim,
+	unsigned long long total_solution_count,
+	int file_count, char ** filename_arr
+) {
 	FILE * out;
 	if (fopen_s(&out, TERMINAL_OUTPUT_FILENAME, "wb") != 0)
 	{
@@ -32,7 +37,14 @@ int write_concat(int dim, int file_count, char ** filename_arr)
 		return -1;
 	}
 
-	FILE * tmp; int tmp_dim = -1;
+	if (fwrite(&total_solution_count, sizeof(unsigned long long), 1, out) != 1)
+	{
+		fclose(out);
+		fprintf(stderr, "Error: can't write dim to terminal file\n");
+		return -1;
+	}
+
+	FILE * tmp; char tbuf[TBUFSIZE];
 	for (int i = 0; i < file_count; i++)
 	{
 		if (fopen_s(&tmp, filename_arr[i], "rb") != 0)
@@ -51,24 +63,18 @@ int write_concat(int dim, int file_count, char ** filename_arr)
 			return -1;
 		}
 
-		if (fread(&tmp_dim, sizeof(int), 1, tmp) != 1)
-		{
-			fclose(tmp);
-			fprintf(stderr, "Error: can't read from file %s, skipping\n", filename_arr[i]);
-			continue;
-		}
+		fseek(tmp, sizeof(int) + sizeof(unsigned long long), SEEK_SET);
 
-		if (dim != tmp_dim)
-		{
-			fclose(tmp);
-			fprintf(stderr, "Error: dim(%d) != tmp_dim(%d), skipping file %s\n", dim, tmp_dim, filename_arr[i]);
-			continue;
-		}
+		//int c;
+		//while ((c = fgetc(tmp)) != EOF)
+		//{
+		//	fputc(c, out);
+		//}
 
-		int c;
-		while ((c = fgetc(tmp)) != EOF)
+		while (!feof(tmp))
 		{
-			fputc(c, out);
+			size_t bread_count = fread(tbuf, sizeof(char), TBUFSIZE, tmp);
+			fwrite(tbuf, sizeof(char), bread_count, out);
 		}
 
 		int error = ferror(tmp);

@@ -4,6 +4,7 @@
 #include "nqp_io_liarr.h"
 #include "nqp_liarr.h"
 #include "file_buffer_adjust.h"
+#include "nqp_inject.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -14,7 +15,7 @@ static int _dim;
 static int _liarr_count;
 static nqp_liarr ** _liarr_arr;
 
-static unsigned long long _s_count;
+static unsigned long long total_solution_count;
 static unsigned long long _fill;
 
 nqp_writer * nqp_write_init(nqp_init_args * args)
@@ -41,7 +42,7 @@ int nqp_write_start(nqp_start_args * args)
 		return 1;
 	}
 
-	if (fwrite(&(args->dim), sizeof(int), 1, _out) != 1)
+	if (inject_dim(args->dim, _out) != INJECT_DIM_SUCCESS)
 	{
 		fclose(_out);
 		return 1;
@@ -58,11 +59,15 @@ int nqp_write_start(nqp_start_args * args)
 
 void nqp_write_notify_computation_complete(unsigned long long s_count)
 {
-	_s_count = s_count;
-	//printf("s_count updated: %llu;\n", _s_count);
+	total_solution_count = s_count;
 }
 
 void nqp_write_wait()
+{
+	return;
+}
+
+void nqp_write_end()
 {
 	for (int i = 0; i < _liarr_count; i++)
 	{
@@ -76,15 +81,9 @@ void nqp_write_wait()
 			_fill += int_count;
 			nqp_liarr_element_free(current, _liarr_arr[i]->heap);
 		}
-	}
-	//printf("total fill = %llu; total fill / dim = %llu\n", _fill, _fill / _dim);
-}
 
-void nqp_write_end()
-{
-	//printf("End liarr nqp-io\n");
-	for (int i = 0; i < _liarr_count; i++)
 		nqp_liarr_free(_liarr_arr[i]);
+	}
 }
 
 void nqp_write_solution(int dim, int * queens, nqp_writer * writer)
@@ -94,6 +93,11 @@ void nqp_write_solution(int dim, int * queens, nqp_writer * writer)
 
 void nqp_write_close(nqp_writer * writer)
 {
+	if (inject_total_solution_count(total_solution_count, _out) != INJECT_TOTAL_SOLUTION_COUNT_SUCCESS)
+	{
+		fprintf(stderr, "Error: can't inject total solution count into output stream %p\n", _out);
+	}
+
 	if (fflush(_out) != 0)
 	{
 		fprintf(stderr, "Error: can't flush output stream %p; Errno = %d\n", _out, errno);

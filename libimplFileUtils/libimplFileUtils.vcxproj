@@ -114,7 +114,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpFailAllocCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpNullCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -137,7 +137,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
-      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpFailAllocCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpNullCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -148,11 +148,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="nqp_inject.h" />
     <ClInclude Include="int_clen.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="write_concat.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="info_inject.c" />
     <ClCompile Include="pch.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -162,7 +164,7 @@
     <ClCompile Include="write_concat.c" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libhdrNqpFailAllocCheck\libhdrNqpFailAllocCheck.vcxproj">
+    <ProjectReference Include="..\libhdrNqpNullCheck\libhdrNqpNullCheck.vcxproj">
       <Project>{b52e34ba-0018-4eee-9a22-7cbb322c37ed}</Project>
     </ProjectReference>
     <ProjectReference Include="..\libhdrNqpIO\libhdrNqpIO.vcxproj">

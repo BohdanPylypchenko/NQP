@@ -25,7 +25,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqp1tBuffer", "dllNqp1tB
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libhdrWinapiConfig", "libhdrWinapiConfig\libhdrWinapiConfig.vcxproj", "{F32B802A-C814-4324-BB7A-BB2415D8A5E7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libhdrNqpFailAllocCheck", "libhdrNqpFailAllocCheck\libhdrNqpFailAllocCheck.vcxproj", "{B52E34BA-0018-4EEE-9A22-7CBB322C37ED}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libhdrNqpNullCheck", "libhdrNqpNullCheck\libhdrNqpNullCheck.vcxproj", "{B52E34BA-0018-4EEE-9A22-7CBB322C37ED}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libhdrNqpIO", "libhdrNqpIO\libhdrNqpIO.vcxproj", "{21EF2E4F-9EFA-49C2-80B2-1B5CCC10913F}"
 EndProject

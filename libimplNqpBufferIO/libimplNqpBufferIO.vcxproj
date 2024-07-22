@@ -114,7 +114,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpFailAllocCheck;$(SolutionDir)libhdrWinapiConfig;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileUtils;$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpNullCheck;$(SolutionDir)libhdrWinapiConfig;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -137,7 +137,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
-      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpFailAllocCheck;$(SolutionDir)libhdrWinapiConfig;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileUtils;$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpNullCheck;$(SolutionDir)libhdrWinapiConfig;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -161,7 +161,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libhdrNqpFailAllocCheck\libhdrNqpFailAllocCheck.vcxproj">
+    <ProjectReference Include="..\libhdrNqpNullCheck\libhdrNqpNullCheck.vcxproj">
       <Project>{b52e34ba-0018-4eee-9a22-7cbb322c37ed}</Project>
     </ProjectReference>
     <ProjectReference Include="..\libhdrNqpIO\libhdrNqpIO.vcxproj">
@@ -172,6 +172,9 @@
     </ProjectReference>
     <ProjectReference Include="..\libimplFileBufferAdjust\libimplFileBufferAdjust.vcxproj">
       <Project>{26c09355-6f76-4557-b241-229538d6e05a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\libimplFileUtils\libimplFileUtils.vcxproj">
+      <Project>{e768402b-6037-47f3-bd59-3e496bd8dd81}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

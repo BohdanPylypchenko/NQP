@@ -9,7 +9,7 @@
 #include "file_buffer_adjust_const.h"
 #include "liarr_adjust.h"
 #include "liarr_adjust_const.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 #include "WinapiConfig.h"
 
 #include <stdio.h>
@@ -18,7 +18,7 @@
 unsigned long long nqp_mt_liarr(int dim, int thread_count)
 {
 	HANDLE heap = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
-	nqp_fail_alloc_check(heap);
+	nqp_null_check(heap);
 
 	nqp_init_args init_args =
 	{
@@ -28,7 +28,7 @@ unsigned long long nqp_mt_liarr(int dim, int thread_count)
 	};
 
 	nqp_writer ** writer_arr = (nqp_writer **)HeapAlloc(heap, 0, dim * sizeof(nqp_writer *));
-	nqp_fail_alloc_check(writer_arr);
+	nqp_null_check(writer_arr);
 
 	for (int i = 0; i < dim; i++)
 	{

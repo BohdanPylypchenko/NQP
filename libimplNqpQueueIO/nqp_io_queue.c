@@ -3,8 +3,9 @@
 #include "nqp_io.h"
 #include "nqp_io_queue.h"
 #include "nqp_queue.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 #include "file_buffer_adjust.h"
+#include "nqp_inject.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,7 +48,7 @@ int nqp_write_start(nqp_start_args * args)
 		return 1;
 	}
 
-	if (fwrite(&(args->dim), sizeof(int), 1, _out) != 1)
+	if (inject_dim(args->dim, _out) != INJECT_DIM_SUCCESS)
 	{
 		fclose(_out);
 		return 1;
@@ -103,7 +104,7 @@ void nqp_write_end()
 void nqp_write_solution(int dim, int * solution, nqp_writer * writer)
 {
 	int * solution_copy = (int *)HeapAlloc(writer->heap, 0, dim * sizeof(int));
-	nqp_fail_alloc_check(solution_copy);
+	nqp_null_check(solution_copy);
 
 	memcpy_s(solution_copy, dim * sizeof(int), solution, dim * sizeof(int));
 
@@ -117,6 +118,11 @@ void nqp_write_solution(int dim, int * solution, nqp_writer * writer)
 
 void nqp_write_close(nqp_writer * writer)
 {
+	if (inject_total_solution_count(_max_write_count, _out) != INJECT_TOTAL_SOLUTION_COUNT_SUCCESS)
+	{
+		fprintf(stderr, "Error: can't inject total solution count into output stream %p\n", _out);
+	}
+
 	if (fflush(_out) != 0)
 	{
 		fprintf(stderr, "Error: can't flush output stream %p; Errno = %d\n", _out, errno);

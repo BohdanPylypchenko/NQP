@@ -4,7 +4,7 @@
 #include "nqp_io.h"
 #include "nqp_iteration.h"
 #include "nqp_field.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 #include "WinapiConfig.h"
 
 #include <stdio.h>
@@ -27,28 +27,28 @@ unsigned long long nqp_mt(
     nqp_start_args * start_args
 ) {
     HANDLE global_heap = HeapCreate(0, 0, 0);
-    nqp_fail_alloc_check(global_heap);
+    nqp_null_check(global_heap);
 
     task ** task_ptr_arr = (task **)HeapAlloc(global_heap, 0, dim * sizeof(task *));
-    nqp_fail_alloc_check(task_ptr_arr);
+    nqp_null_check(task_ptr_arr);
     for (int i = 0; i < dim; i++) {
         HANDLE task_heap = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
-        nqp_fail_alloc_check(task_heap);
+        nqp_null_check(task_heap);
 
         task_ptr_arr[i] = (task *)HeapAlloc(task_heap, 0, sizeof(task));
-        nqp_fail_alloc_check(task_ptr_arr[i]);
+        nqp_null_check(task_ptr_arr[i]);
 
         task_ptr_arr[i]->task_heap = task_heap;
         task_ptr_arr[i]->thread_index = i;
 
         task_ptr_arr[i]->state = (nqp_state *)HeapAlloc(task_heap, 0, sizeof(nqp_state));
-        nqp_fail_alloc_check(task_ptr_arr[i]->state);
+        nqp_null_check(task_ptr_arr[i]->state);
 
         task_ptr_arr[i]->state->dim = dim;
         task_ptr_arr[i]->state->field = field_alloc(dim, task_heap);
 
         task_ptr_arr[i]->state->queens = (int *)HeapAlloc(task_heap, 0, dim * sizeof(int));
-        nqp_fail_alloc_check(task_ptr_arr[i]->state->queens);
+        nqp_null_check(task_ptr_arr[i]->state->queens);
 
         task_ptr_arr[i]->state->s_count = 0;
         task_ptr_arr[i]->state->writer = writer_arr[i];
@@ -58,7 +58,7 @@ unsigned long long nqp_mt(
     }
 
     PHANDLE hThreadArr = (PHANDLE)HeapAlloc(global_heap, 0, dim * sizeof(HANDLE));
-    nqp_fail_alloc_check(hThreadArr);
+    nqp_null_check(hThreadArr);
     nqp_write_start(start_args);
     double start_time = omp_get_wtime();
     for (int i = 0; i < dim; i++) {

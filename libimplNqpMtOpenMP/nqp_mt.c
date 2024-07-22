@@ -4,7 +4,7 @@
 #include "nqp_mt.h"
 #include "nqp_iteration.h"
 #include "nqp_field.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 #include "WinapiConfig.h"
 
 #include <omp.h>
@@ -21,7 +21,7 @@ unsigned long long nqp_mt(
 
     unsigned long long total_s_count = 0;
     nqp_state * state_arr = (nqp_state *)HeapAlloc(global_heap, 0, dim * sizeof(nqp_state));
-    nqp_fail_alloc_check(state_arr);
+    nqp_null_check(state_arr);
     nqp_write_start(start_args);
     int i;
     omp_set_num_threads(thread_count);
@@ -29,12 +29,12 @@ unsigned long long nqp_mt(
     #pragma omp parallel for reduction(+:total_s_count)
     for (i = 0; i < dim; i++) {
         HANDLE local_heap = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
-        nqp_fail_alloc_check(local_heap);
+        nqp_null_check(local_heap);
 
         state_arr[i].dim = dim;
         state_arr[i].field = field_alloc(dim, local_heap);
         state_arr[i].queens = (int *)HeapAlloc(local_heap, 0, dim * sizeof(int));
-        nqp_fail_alloc_check(state_arr[i].queens);
+        nqp_null_check(state_arr[i].queens);
         state_arr[i].s_count = 0;
         state_arr[i].writer = writer_arr[i];
 
