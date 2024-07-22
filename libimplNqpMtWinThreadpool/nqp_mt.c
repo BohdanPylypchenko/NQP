@@ -4,7 +4,7 @@
 #include "nqp_io.h"
 #include "nqp_iteration.h"
 #include "nqp_field.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -77,24 +77,24 @@ unsigned long long nqp_mt(
     );
 
     HANDLE global_heap = HeapCreate(0, 0, 0);
-    nqp_fail_alloc_check(global_heap);
+    nqp_null_check(global_heap);
 
     nqp_state ** state_ptr_arr = (nqp_state **)HeapAlloc(global_heap, 0, dim * sizeof(nqp_state *));
-    nqp_fail_alloc_check(state_ptr_arr);
+    nqp_null_check(state_ptr_arr);
 
     HANDLE * local_heap_handle_arr = (HANDLE *)HeapAlloc(global_heap, 0, dim * sizeof(HANDLE));
-    nqp_fail_alloc_check(local_heap_handle_arr);
+    nqp_null_check(local_heap_handle_arr);
 
     for (int i = 0; i < dim; i++) {
         local_heap_handle_arr[i] = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
-        nqp_fail_alloc_check(local_heap_handle_arr[i]);
+        nqp_null_check(local_heap_handle_arr[i]);
 
         state_ptr_arr[i] = (nqp_state *)HeapAlloc(local_heap_handle_arr[i], 0, sizeof(nqp_state));
-        nqp_fail_alloc_check(state_ptr_arr[i]);
+        nqp_null_check(state_ptr_arr[i]);
         state_ptr_arr[i]->dim = dim;
         state_ptr_arr[i]->field = field_alloc(dim, local_heap_handle_arr[i]);
         state_ptr_arr[i]->queens = (int *)HeapAlloc(local_heap_handle_arr[i], 0, dim * sizeof(int));
-        nqp_fail_alloc_check(state_ptr_arr[i]->queens);
+        nqp_null_check(state_ptr_arr[i]->queens);
         state_ptr_arr[i]->s_count = 0;
         state_ptr_arr[i]->writer = writer_arr[i];
 

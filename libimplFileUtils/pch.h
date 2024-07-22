@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 #include "nqp_io.h"
 
 #endif //PCH_H

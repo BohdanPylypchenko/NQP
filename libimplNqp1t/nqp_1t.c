@@ -3,7 +3,7 @@
 #include "nqp_1t.h"
 
 #include "nqp_io.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 #include "nqp_iteration.h"
 #include "nqp_field.h"
 
@@ -15,7 +15,7 @@ unsigned long long nqp_1t(
     nqp_start_args * start_args
 ) {
     HANDLE heap = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
-    nqp_fail_alloc_check(heap);
+    nqp_null_check(heap);
 
     nqp_state state =
     {
@@ -25,7 +25,7 @@ unsigned long long nqp_1t(
         .s_count = 0,
         .writer = writer
     };
-    nqp_fail_alloc_check(state.queens);
+    nqp_null_check(state.queens);
 
     if (nqp_write_start(start_args) != 0)
     {

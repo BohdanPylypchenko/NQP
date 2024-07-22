@@ -3,20 +3,23 @@
 #include "nqp_io_buffer.h"
 
 #include "nqp_io.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 #include "file_buffer_adjust.h"
+#include "nqp_inject.h"
 #include "WinapiConfig.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 
+static unsigned long long total_solution_count;
+
 nqp_writer * nqp_write_init(nqp_init_args * args)
 {
 	HANDLE heap = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
-	nqp_fail_alloc_check(heap);
+	nqp_null_check(heap);
 
 	nqp_writer * writer = (nqp_writer *)HeapAlloc(heap, 0, sizeof(nqp_writer));
-	nqp_fail_alloc_check(writer);
+	nqp_null_check(writer);
 
 	writer->id = args->id;
 	writer->out_filename = args->out_filename;
@@ -37,7 +40,7 @@ nqp_writer * nqp_write_init(nqp_init_args * args)
 		return NULL;
 	}
 
-	if (fwrite(&(args->dim), sizeof(int), 1, writer->out) != 1)
+	if (inject_dim(args->dim, writer->out) != INJECT_DIM_SUCCESS)
 	{
 		fclose(writer->out);
 		HeapDestroy(heap);
@@ -56,6 +59,7 @@ int nqp_write_start(nqp_start_args * nqp_start_args)
 void nqp_write_notify_computation_complete(unsigned long long s_count)
 {
 	//printf("Computation nqp completed; solution count = %lld\n", s_count);
+	total_solution_count = s_count;
 }
 
 void nqp_write_wait()
@@ -79,6 +83,11 @@ void nqp_write_solution(int dim, int * queens, nqp_writer * writer)
 
 void nqp_write_close(nqp_writer * writer)
 {
+	if (inject_total_solution_count(total_solution_count, writer->out) != INJECT_TOTAL_SOLUTION_COUNT_SUCCESS)
+	{
+		fprintf(stderr, "Error: can't inject total solution count into output stream %p\n", writer->out);
+	}
+
 	if (fflush(writer->out) != 0)
 	{
 		fprintf(stderr, "Error: can't flush output stream %p; Errno = %d\n", writer->out, errno);

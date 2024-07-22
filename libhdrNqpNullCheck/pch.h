@@ -7,6 +7,6 @@
 #ifndef PCH_H
 #define PCH_H
 
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 
 #endif //PCH_H

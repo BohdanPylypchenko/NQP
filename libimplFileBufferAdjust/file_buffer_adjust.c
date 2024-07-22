@@ -17,7 +17,6 @@ int adjust_buf_size(
 		bufsize = bufsize_15;
 	else
 		bufsize = bufsize_big;
-	bufsize *= sizeof(int) * dim;
 
 	return setvbuf(stream, NULL, _IOFBF, bufsize);
 }

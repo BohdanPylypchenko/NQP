@@ -14,7 +14,7 @@
 #include "file_buffer_adjust_const.h"
 #include "int_clen.h"
 #include "write_concat.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 #include "WinapiConfig.h"
 
 #include <stdio.h>

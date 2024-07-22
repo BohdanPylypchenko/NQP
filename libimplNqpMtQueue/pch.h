@@ -13,7 +13,7 @@
 #include "nqp_queue.h"
 #include "nqp_io_const.h"
 #include "file_buffer_adjust_const.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 #include "WinapiConfig.h"
 
 #include <stdio.h>

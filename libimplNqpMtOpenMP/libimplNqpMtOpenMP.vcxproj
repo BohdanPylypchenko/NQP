@@ -114,7 +114,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)libhdrWinapiConfig;$(SolutionDir)libimplNqpIteration;$(SolutionDir)libhdrNqpMt;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpFailAllocCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libhdrWinapiConfig;$(SolutionDir)libimplNqpIteration;$(SolutionDir)libhdrNqpMt;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpNullCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OpenMPSupport>true</OpenMPSupport>
     </ClCompile>
     <Link>
@@ -138,7 +138,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
-      <AdditionalIncludeDirectories>$(SolutionDir)libhdrWinapiConfig;$(SolutionDir)libimplNqpIteration;$(SolutionDir)libhdrNqpMt;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpFailAllocCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libhdrWinapiConfig;$(SolutionDir)libimplNqpIteration;$(SolutionDir)libhdrNqpMt;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpNullCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OpenMPSupport>true</OpenMPSupport>
     </ClCompile>
     <Link>
@@ -162,7 +162,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libhdrNqpFailAllocCheck\libhdrNqpFailAllocCheck.vcxproj">
+    <ProjectReference Include="..\libhdrNqpNullCheck\libhdrNqpNullCheck.vcxproj">
       <Project>{b52e34ba-0018-4eee-9a22-7cbb322c37ed}</Project>
     </ProjectReference>
     <ProjectReference Include="..\libhdrNqpIO\libhdrNqpIO.vcxproj">

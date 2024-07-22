@@ -24,6 +24,7 @@
     <ProjectGuid>{b52e34ba-0018-4eee-9a22-7cbb322c37ed}</ProjectGuid>
     <RootNamespace>libhdrNqpFailAllocCheck</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>libhdrNqpNullCheck</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -146,7 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="nqp_fail_alloc_check.h" />
+    <ClInclude Include="nqp_null_check.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>

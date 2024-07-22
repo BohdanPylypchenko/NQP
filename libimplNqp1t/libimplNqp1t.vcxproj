@@ -114,7 +114,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)libhdrWinapiConfig;$(SolutionDir)libimplNqpIteration;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpFailAllocCheck;$(SolutionDir)libhdrNqp1t;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libhdrWinapiConfig;$(SolutionDir)libimplNqpIteration;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpNullCheck;$(SolutionDir)libhdrNqp1t;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -137,7 +137,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
-      <AdditionalIncludeDirectories>$(SolutionDir)libhdrWinapiConfig;$(SolutionDir)libimplNqpIteration;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpFailAllocCheck;$(SolutionDir)libhdrNqp1t;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libhdrWinapiConfig;$(SolutionDir)libimplNqpIteration;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpNullCheck;$(SolutionDir)libhdrNqp1t;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -163,7 +163,7 @@
     <ProjectReference Include="..\libhdrNqp1t\libhdrNqp1t.vcxproj">
       <Project>{fa931b48-e381-42fe-8e3b-44a980383fc6}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\libhdrNqpFailAllocCheck\libhdrNqpFailAllocCheck.vcxproj">
+    <ProjectReference Include="..\libhdrNqpNullCheck\libhdrNqpNullCheck.vcxproj">
       <Project>{b52e34ba-0018-4eee-9a22-7cbb322c37ed}</Project>
     </ProjectReference>
     <ProjectReference Include="..\libhdrNqpIO\libhdrNqpIO.vcxproj">
