@@ -11,6 +11,7 @@
 #include "write_concat.h"
 #include "nqp_null_check.h"
 #include "WinapiConfig.h"
+#include "nqp_memory.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,19 +32,10 @@ unsigned long long nqp_mt_buffer(int dim, int thread_count)
 	int nqp_extension_len = (int)strnlen_s(NQP_EXTENSION, INT_MAX - 1);
 	nqp_init_args args;
 	args.dim = dim;
-	args.bufsize_11 = BUFSIZE_11_SINGLE_FILE;
-	args.bufsize_15 = BUFSIZE_15_SINGLE_FILE;
-	args.bufsize_big = BUFSIZE_BIG_SINGLE_FILE;
+	args.memory_size_in_bytes = get_available_physical_memory_bytes() / dim;
 	for (int i = 0; i < dim; i++)
 	{
 		args.id = i;
-
-		int int_clen = INT_CLEN(i + 1);
-		int filename_len = base_tmp_filename_len + int_clen + nqp_extension_len + 1;
-		args.out_filename = (char *)HeapAlloc(heap, 0, filename_len * sizeof(char));
-		nqp_null_check(args.out_filename);
-		sprintf_s(args.out_filename, filename_len * sizeof(char), "%s%d%s", BASE_TMP_FILENAME, i + 1, NQP_EXTENSION);
-		args.out_filename[filename_len - 1] = '\0';
 
 		writer_arr[i] = nqp_write_init(&args);
 		if (writer_arr[i] == NULL)
@@ -55,15 +47,12 @@ unsigned long long nqp_mt_buffer(int dim, int thread_count)
 
 	unsigned long long s_count = nqp_mt(dim, thread_count, writer_arr, NULL);
 
-	char ** out_filename_arr = (char **)HeapAlloc(heap, 0, dim * sizeof(char *));
-	nqp_null_check(out_filename_arr);
 	for (int i = 0; i < dim; i++)
 	{
-		out_filename_arr[i] = writer_arr[i]->out_filename;
 		nqp_write_close(writer_arr[i]);
 	}
 
-	if (write_concat(dim, s_count, dim, out_filename_arr) != 0)
+	if (write_concat(dim, s_count) != 0)
 	{
 		fprintf(stderr, "Error: failed output concat\n");
 	}

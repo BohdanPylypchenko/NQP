@@ -17,12 +17,18 @@
     <ClInclude Include="nqp_io_buffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="nqp_memory_map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="nqp_io_buffer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nqp_memory_map.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

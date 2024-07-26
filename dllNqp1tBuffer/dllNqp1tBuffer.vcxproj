@@ -114,7 +114,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)libimplNqpDimThreadcountConstraint;$(SolutionDir)libimplNqpBufferIO;$(SolutionDir)libimplNqp1t;$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqp1t;$(SolutionDir)libhdrWinapiConfig;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileUtils;$(SolutionDir)libimplNqpDimThreadcountConstraint;$(SolutionDir)libimplNqpBufferIO;$(SolutionDir)libimplNqp1t;$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqp1t;$(SolutionDir)libhdrWinapiConfig;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -137,7 +137,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
-      <AdditionalIncludeDirectories>$(SolutionDir)libimplNqpDimThreadcountConstraint;$(SolutionDir)libimplNqpBufferIO;$(SolutionDir)libimplNqp1t;$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqp1t;$(SolutionDir)libhdrWinapiConfig;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileUtils;$(SolutionDir)libimplNqpDimThreadcountConstraint;$(SolutionDir)libimplNqpBufferIO;$(SolutionDir)libimplNqp1t;$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqp1t;$(SolutionDir)libhdrWinapiConfig;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -173,6 +173,9 @@
     </ProjectReference>
     <ProjectReference Include="..\libimplFileBufferAdjust\libimplFileBufferAdjust.vcxproj">
       <Project>{26c09355-6f76-4557-b241-229538d6e05a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\libimplFileUtils\libimplFileUtils.vcxproj">
+      <Project>{e768402b-6037-47f3-bd59-3e496bd8dd81}</Project>
     </ProjectReference>
     <ProjectReference Include="..\libimplNqp1t\libimplNqp1t.vcxproj">
       <Project>{7db8523d-a91d-4569-8e2e-a6cb0998b92c}</Project>

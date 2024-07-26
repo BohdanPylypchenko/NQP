@@ -9,10 +9,12 @@
 
 #include "nqp_null_check.h"
 #include "nqp_io.h"
+#include "nqp_io_const.h"
 #include "WinapiConfig.h"
 #include "nqp_inject.h"
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #endif //PCH_H

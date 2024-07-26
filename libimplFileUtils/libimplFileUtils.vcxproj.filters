@@ -23,6 +23,12 @@
     <ClInclude Include="nqp_inject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="nqp_memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nqp_word_split_concat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.c">
@@ -31,7 +37,13 @@
     <ClCompile Include="write_concat.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="info_inject.c">
+    <ClCompile Include="nqp_inject.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nqp_memory.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nqp_word_split_concat.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

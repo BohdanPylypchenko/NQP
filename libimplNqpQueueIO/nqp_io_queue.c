@@ -106,7 +106,7 @@ void nqp_write_solution(int dim, int * solution, nqp_writer * writer)
 	int * solution_copy = (int *)HeapAlloc(writer->heap, 0, dim * sizeof(int));
 	nqp_null_check(solution_copy);
 
-	memcpy_s(solution_copy, dim * sizeof(int), solution, dim * sizeof(int));
+	memcpy(solution_copy, solution, dim * sizeof(int));
 
 	nqp_queue_element * element = nqp_queue_element_new(
 		dim, solution_copy,

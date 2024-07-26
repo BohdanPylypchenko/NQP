@@ -114,7 +114,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpNullCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpNullCheck;$(SolutionDir)libhdrWinapiConfig;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -137,7 +137,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
-      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpNullCheck;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libimplFileBufferAdjust;$(SolutionDir)libhdrNqpIO;$(SolutionDir)libhdrNqpNullCheck;$(SolutionDir)libhdrWinapiConfig;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -148,19 +148,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="nqp_memory.h" />
     <ClInclude Include="nqp_inject.h" />
     <ClInclude Include="int_clen.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="nqp_word_split_concat.h" />
     <ClInclude Include="write_concat.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="info_inject.c" />
+    <ClCompile Include="nqp_inject.c" />
+    <ClCompile Include="nqp_memory.c" />
     <ClCompile Include="pch.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="nqp_word_split_concat.c" />
     <ClCompile Include="write_concat.c" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +173,9 @@
     </ProjectReference>
     <ProjectReference Include="..\libhdrNqpIO\libhdrNqpIO.vcxproj">
       <Project>{21ef2e4f-9efa-49c2-80b2-1b5ccc10913f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\libhdrWinapiConfig\libhdrWinapiConfig.vcxproj">
+      <Project>{f32b802a-c814-4324-bb7a-bb2415d8a5e7}</Project>
     </ProjectReference>
     <ProjectReference Include="..\libimplFileBufferAdjust\libimplFileBufferAdjust.vcxproj">
       <Project>{26c09355-6f76-4557-b241-229538d6e05a}</Project>

@@ -5,6 +5,8 @@
 #include "file_buffer_adjust_const.h"
 #include "nqp_io_const.h"
 #include "nqp_null_check.h"
+#include "WinapiConfig.h"
+#include "nqp_word_split_concat.h"
 
 #include <stdio.h>
 
@@ -12,8 +14,7 @@
 
 int write_concat(
 	int dim,
-	unsigned long long total_solution_count,
-	int file_count, char ** filename_arr
+	unsigned long long total_solution_count
 ) {
 	FILE * out;
 	if (fopen_s(&out, TERMINAL_OUTPUT_FILENAME, "wb") != 0)
@@ -44,48 +45,65 @@ int write_concat(
 		return -1;
 	}
 
-	FILE * tmp; char tbuf[TBUFSIZE];
-	for (int i = 0; i < file_count; i++)
+	WIN32_FIND_DATA ffd;
+	HANDLE find = FindFirstFile(L".\\*.tnqp", &ffd);
+	if (find == INVALID_HANDLE_VALUE)
 	{
-		if (fopen_s(&tmp, filename_arr[i], "rb") != 0)
-		{
-			fclose(out);
-			fprintf(stderr, "Error: can't open file %s\n", filename_arr[i]);
-			return -1;
-		}
-
-		if (adjust_buf_size(out, dim,
-			BUFSIZE_11_SINGLE_FILE, BUFSIZE_15_SINGLE_FILE, BUFSIZE_BIG_SINGLE_FILE) != 0)
-		{
-			fclose(out);
-			fclose(tmp);
-			fprintf(stderr, "Error: can't resize buffer of file %s\n", filename_arr[i]);
-			return -1;
-		}
-
-		fseek(tmp, sizeof(int) + sizeof(unsigned long long), SEEK_SET);
-
-		//int c;
-		//while ((c = fgetc(tmp)) != EOF)
-		//{
-		//	fputc(c, out);
-		//}
-
-		while (!feof(tmp))
-		{
-			size_t bread_count = fread(tbuf, sizeof(char), TBUFSIZE, tmp);
-			fwrite(tbuf, sizeof(char), bread_count, out);
-		}
-
-		int error = ferror(tmp);
-		if (error != 0)
-		{
-			fprintf(stderr, "Error: unexpected eof while reading file %s; ferror = %d\n", filename_arr[i], ferror(tmp));
-		}
-
-		fclose(tmp);
-		remove(filename_arr[i]);
+		abort();
 	}
+
+	do
+	{
+		HANDLE file = CreateFileW(
+			ffd.cFileName,
+			GENERIC_READ,
+			0, NULL,
+			OPEN_EXISTING,
+			FILE_ATTRIBUTE_NORMAL,
+			NULL
+		);
+		if (file == INVALID_HANDLE_VALUE)
+		{
+			abort();
+		}
+
+		HANDLE fileMapping = CreateFileMappingW(
+			file,
+			NULL,
+			PAGE_READONLY,
+			0, 0,
+			NULL
+		);
+		if (fileMapping == NULL)
+		{
+			abort();
+		}
+
+		LPBYTE fileView = MapViewOfFile(
+			fileMapping,
+			FILE_MAP_READ,
+			0, 0, 0
+		);
+
+		CloseHandle(fileMapping);
+
+		LPBYTE data = fileView + sizeof(int);
+		unsigned long long solution_count;
+		memcpy(&solution_count, data, sizeof(unsigned long long));
+		data += sizeof(unsigned long long);
+
+		size_t solution_size = dim * sizeof(int);
+		for (unsigned long long i = 0; i < solution_count; i++)
+		{
+			fwrite(data, sizeof(int), dim, out);
+			data += solution_size;
+		}
+
+		UnmapViewOfFile(fileView);
+
+		CloseHandle(file);
+		DeleteFileW(ffd.cFileName);
+	} while (FindNextFile(find, &ffd) != 0);
 
 	fflush(out);
 	fclose(out);
