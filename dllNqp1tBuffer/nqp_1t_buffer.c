@@ -6,6 +6,8 @@
 #include "nqp_io_buffer.h"
 #include "file_buffer_adjust_const.h"
 #include "nqp_dim_threadcount_constraint.h"
+#include "write_concat.h"
+#include "nqp_memory.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,11 +22,8 @@ __declspec(dllexport) unsigned long long nqp_1t_buffer(int dim)
 	nqp_init_args args =
 	{
 		.id = 1,
-		.out_filename = TERMINAL_OUTPUT_FILENAME,
 		.dim = dim,
-		.bufsize_11 = BUFSIZE_11_SINGLE_FILE,
-		.bufsize_15 = BUFSIZE_15_SINGLE_FILE,
-		.bufsize_big = BUFSIZE_BIG_SINGLE_FILE
+		.memory_size_in_bytes = get_available_physical_memory_bytes() / 2
 	};
 	nqp_writer * writer = nqp_write_init(&args);
 	if (writer == NULL)
@@ -37,6 +36,8 @@ __declspec(dllexport) unsigned long long nqp_1t_buffer(int dim)
 
 	nqp_write_end();
 	nqp_write_close(writer);
+
+	write_concat(dim, s_count);
 
 	return s_count;
 }

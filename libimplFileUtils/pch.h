@@ -14,4 +14,6 @@
 #include "nqp_null_check.h"
 #include "nqp_io.h"
 
+#include "WinapiConfig.h"
+
 #endif //PCH_H

@@ -16,6 +16,7 @@
 #include "write_concat.h"
 #include "nqp_null_check.h"
 #include "WinapiConfig.h"
+#include "nqp_memory.h"
 
 #include <stdio.h>
 #include <stdlib.h>

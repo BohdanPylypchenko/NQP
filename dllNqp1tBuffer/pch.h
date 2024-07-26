@@ -15,6 +15,8 @@
 #include "nqp_io_const.h"
 #include "file_buffer_adjust_const.h"
 #include "nqp_dim_threadcount_constraint.h"
+#include "write_concat.h"
+#include "nqp_memory.h"
 
 #include <stdio.h>
 #include <stdlib.h>

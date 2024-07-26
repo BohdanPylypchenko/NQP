@@ -101,12 +101,8 @@ static void _nqp_liarr_element_write_solution(
 	nqp_liarr_element * element,
 	int dim, int * solution
 ) {
-	errno_t error = memcpy_s(element->solution_write_ptr, dim * sizeof(int),
-		solution, dim * sizeof(int));
-	if (error != 0)
-	{
-		fprintf(stderr, "Error: failed to copy solution into liarr, errno = %d\n", error);
-	}
+	memcpy(element->solution_write_ptr, solution, dim * sizeof(int));
+
 	element->solution_fill++;
 	element->solution_write_ptr += dim;
 }
