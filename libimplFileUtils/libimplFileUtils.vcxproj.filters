@@ -14,9 +14,6 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="int_clen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="write_concat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -26,7 +23,10 @@
     <ClInclude Include="nqp_memory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="nqp_word_split_concat.h">
+    <ClInclude Include="nqp_create_temp_file_win.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nqp_create_temp_file_std.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -43,7 +43,10 @@
     <ClCompile Include="nqp_memory.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="nqp_word_split_concat.c">
+    <ClCompile Include="nqp_create_temp_file_win.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nqp_create_temp_file_std.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

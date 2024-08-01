@@ -33,7 +33,8 @@ unsigned long long nqp_mt(
 
     task ** task_ptr_arr = (task **)HeapAlloc(global_heap, 0, thread_count * sizeof(task *));
     nqp_null_check(task_ptr_arr);
-    for (int i = 0; i < thread_count; i++) {
+    for (int i = 0; i < thread_count; i++)
+    {
         HANDLE task_heap = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
         nqp_null_check(task_heap);
 
@@ -50,7 +51,8 @@ unsigned long long nqp_mt(
 
     nqp_state ** state_ptr_arr = (nqp_state **)HeapAlloc(global_heap, 0, dim * sizeof(nqp_state *));
     nqp_null_check(state_ptr_arr);
-    for (int i = 0; i < dim; i++) {
+    for (int i = 0; i < dim; i++)
+    {
         task * current_task = task_ptr_arr[i % thread_count];
 
         state_ptr_arr[i] = (nqp_state *)HeapAlloc(current_task->task_heap, 0, sizeof(nqp_state));
@@ -75,7 +77,8 @@ unsigned long long nqp_mt(
     nqp_null_check(hThreadArr);
     nqp_write_start(start_args);
     double start_time = omp_get_wtime();
-    for (int i = 0; i < thread_count; i++) {
+    for (int i = 0; i < thread_count; i++)
+    {
         hThreadArr[i] = CreateThread(
             NULL,                         // default security attributes
             0,                            // use default stack size  
@@ -91,7 +94,8 @@ unsigned long long nqp_mt(
     }
     WaitForMultipleObjects(thread_count, hThreadArr, TRUE, INFINITE);
     unsigned long long total_s_count = 0;
-    for (int i = 0; i < thread_count; i++) {
+    for (int i = 0; i < thread_count; i++)
+    {
         total_s_count += task_ptr_arr[i]->solution_count;
     }
     double end_time = omp_get_wtime();
@@ -101,7 +105,8 @@ unsigned long long nqp_mt(
     nqp_write_wait();
     nqp_write_end();
 
-    for (int i = 0; i < thread_count; i++) {
+    for (int i = 0; i < thread_count; i++)
+    {
         CloseHandle(hThreadArr[i]);
     }
 
@@ -116,20 +121,12 @@ unsigned long long nqp_mt(
 static DWORD WINAPI _thread_execute_task(LPVOID lpParam) {
     task * t = (task *)lpParam;
 
-    //printf(
-    //    "Thread index = %d; Thread id = %d; State count = %d;\n",
-    //    t->thread_index, t->thread_id, t->state_count
-    //);
-
-    for (int i = 0; i < t->state_count; i++) {
+    for (int i = 0; i < t->state_count; i++)
+    {
         double start_time = omp_get_wtime();
         nqp_iteration(1, t->state_ptr_arr[i]);
         t->solution_count += t->state_ptr_arr[i]->s_count;
         double end_time = omp_get_wtime();
-        //printf(
-        //    "Thread %d finish state %d in %lf\n",
-        //    t->thread_index, i, end_time - start_time
-        //);
     }
 
     return 0;

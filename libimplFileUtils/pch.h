@@ -13,6 +13,7 @@
 
 #include "nqp_null_check.h"
 #include "nqp_io.h"
+#include "nqp_io_const.h"
 
 #include "WinapiConfig.h"
 

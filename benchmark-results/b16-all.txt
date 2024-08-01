@@ -1,0 +1,1466 @@
+PS J:\repos\NQP\x64\Release> .\exeTestRunner.exe
+
+===> Executing: J:\repos\NQP\x64\Release\testNqp1tMemoryMap.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Solution count test passed
+Time = 0.009330
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Solution count test passed
+Time = 0.010542
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Solution count test passed
+Time = 0.012071
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Solution count test passed
+Time = 0.023876
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Solution count test passed
+Time = 0.089687
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Solution count test passed
+Time = 0.473162
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Solution count test passed
+Time = 2.796956
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Solution count test passed
+Time = 17.902837
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Solution count test passed
+Time = 123.899617
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqp1tQueue.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Solution count test passed
+Time = 0.001017
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Solution count test passed
+Time = 0.003276
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Solution count test passed
+Time = 0.004135
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Solution count test passed
+Time = 0.017161
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Solution count test passed
+Time = 0.093727
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Solution count test passed
+Time = 0.545215
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Solution count test passed
+Time = 3.147534
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Solution count test passed
+Time = 21.279346
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Solution count test passed
+Time = 145.940864
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqp1tStdBuffer.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Solution count test passed
+Time = 0.003909
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Solution count test passed
+Time = 0.031666
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Solution count test passed
+Time = 0.018386
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Solution count test passed
+Time = 0.039640
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Solution count test passed
+Time = 0.111225
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Solution count test passed
+Time = 0.504695
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Solution count test passed
+Time = 2.841902
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Solution count test passed
+Time = 18.359816
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Solution count test passed
+Time = 125.455951
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqp1tWinBuffer.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Solution count test passed
+Time = 0.003951
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Solution count test passed
+Time = 0.014545
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Solution count test passed
+Time = 0.016833
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Solution count test passed
+Time = 0.036064
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Solution count test passed
+Time = 0.099672
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Solution count test passed
+Time = 0.483941
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Solution count test passed
+Time = 2.838349
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Solution count test passed
+Time = 18.235959
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Solution count test passed
+Time = 125.726039
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtOpenMPMemoryMap.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.000847
+Solution count test passed
+Time = 0.113451
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.000478
+Solution count test passed
+Time = 0.285738
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.001409
+Solution count test passed
+Time = 0.178964
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.005935
+Solution count test passed
+Time = 0.268059
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.033084
+Solution count test passed
+Time = 0.190723
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.174716
+Solution count test passed
+Time = 0.397178
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 0.780020
+Solution count test passed
+Time = 1.027947
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 6.556590
+Solution count test passed
+Time = 7.908680
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 43.749706
+Solution count test passed
+Time = 46.750791
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtOpenMPQueue.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.000622
+Solution count test passed
+Time = 0.001612
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.001332
+Solution count test passed
+Time = 0.003720
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.002723
+Solution count test passed
+Time = 0.004163
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.009886
+Solution count test passed
+Time = 0.011103
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.032370
+Solution count test passed
+Time = 0.033899
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.185475
+Solution count test passed
+Time = 0.188900
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 0.916693
+Solution count test passed
+Time = 0.918329
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 8.186582
+Solution count test passed
+Time = 8.188628
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 54.875950
+Solution count test passed
+Time = 54.877874
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtOpenMPStdBuffer.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.001410
+Solution count test passed
+Time = 0.023802
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.002709
+Solution count test passed
+Time = 0.023778
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.002010
+Solution count test passed
+Time = 0.030251
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.008123
+Solution count test passed
+Time = 0.047542
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.037238
+Solution count test passed
+Time = 0.111759
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.157763
+Solution count test passed
+Time = 0.250721
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 0.932186
+Solution count test passed
+Time = 1.644698
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 6.646805
+Solution count test passed
+Time = 7.107630
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 48.838362
+Solution count test passed
+Time = 50.758128
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtOpenMPWinBuffer.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.001134
+Solution count test passed
+Time = 0.020635
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.001165
+Solution count test passed
+Time = 0.016663
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.002879
+Solution count test passed
+Time = 0.032514
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.007726
+Solution count test passed
+Time = 0.059339
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.038065
+Solution count test passed
+Time = 0.121130
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.205454
+Solution count test passed
+Time = 0.301734
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 1.205567
+Solution count test passed
+Time = 1.320621
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 8.713064
+Solution count test passed
+Time = 9.822708
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 52.283854
+Solution count test passed
+Time = 55.511216
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWin32MemoryMap.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.001405
+Solution count test passed
+Time = 0.071582
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.001452
+Solution count test passed
+Time = 0.232931
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.001454
+Solution count test passed
+Time = 0.131748
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.005409
+Solution count test passed
+Time = 0.227374
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.023481
+Solution count test passed
+Time = 0.151646
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.133203
+Solution count test passed
+Time = 0.345150
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 0.900356
+Solution count test passed
+Time = 1.178303
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 6.554132
+Solution count test passed
+Time = 7.351153
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 42.863576
+Solution count test passed
+Time = 45.892201
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWin32Queue.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.001482
+Solution count test passed
+Time = 0.003159
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.001329
+Solution count test passed
+Time = 0.003277
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.001861
+Solution count test passed
+Time = 0.003079
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.006011
+Solution count test passed
+Time = 0.007398
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.028665
+Solution count test passed
+Time = 0.030003
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.161711
+Solution count test passed
+Time = 0.163541
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 0.871909
+Solution count test passed
+Time = 0.873476
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 7.859542
+Solution count test passed
+Time = 7.863544
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 55.504208
+Solution count test passed
+Time = 55.506927
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWin32StdBuffer.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.001413
+Solution count test passed
+Time = 0.018434
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.001440
+Solution count test passed
+Time = 0.010778
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.003336
+Solution count test passed
+Time = 0.026514
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.005669
+Solution count test passed
+Time = 0.042137
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.027328
+Solution count test passed
+Time = 0.092855
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.132597
+Solution count test passed
+Time = 0.215820
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 0.833007
+Solution count test passed
+Time = 0.956130
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 7.306215
+Solution count test passed
+Time = 8.102734
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 48.204333
+Solution count test passed
+Time = 50.226476
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWin32WinBuffer.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.001949
+Solution count test passed
+Time = 0.020418
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.001847
+Solution count test passed
+Time = 0.015566
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.001978
+Solution count test passed
+Time = 0.027072
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.006730
+Solution count test passed
+Time = 0.049361
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.024561
+Solution count test passed
+Time = 0.091892
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.129085
+Solution count test passed
+Time = 0.217196
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 1.120373
+Solution count test passed
+Time = 1.414531
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 6.765817
+Solution count test passed
+Time = 7.881794
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 45.914317
+Solution count test passed
+Time = 49.759060
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinDummyMemoryMap.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.000946
+Solution count test passed
+Time = 0.070998
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.002114
+Solution count test passed
+Time = 0.155393
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.001669
+Solution count test passed
+Time = 0.132826
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.005340
+Solution count test passed
+Time = 0.119427
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.023710
+Solution count test passed
+Time = 0.169101
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.123857
+Solution count test passed
+Time = 0.306914
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 0.986573
+Solution count test passed
+Time = 1.433486
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 6.085171
+Solution count test passed
+Time = 7.443377
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 42.435040
+Solution count test passed
+Time = 45.473687
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinDummyQueue.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.001692
+Solution count test passed
+Time = 0.003609
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.000999
+Solution count test passed
+Time = 0.002341
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.002136
+Solution count test passed
+Time = 0.003539
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.005604
+Solution count test passed
+Time = 0.007489
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.027381
+Solution count test passed
+Time = 0.028971
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.149460
+Solution count test passed
+Time = 0.150841
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 0.829513
+Solution count test passed
+Time = 0.833206
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 7.268765
+Solution count test passed
+Time = 7.275180
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 48.302237
+Solution count test passed
+Time = 48.306734
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinDummyStdBuffer.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.000934
+Solution count test passed
+Time = 0.015173
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.001125
+Solution count test passed
+Time = 0.008951
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.003441
+Solution count test passed
+Time = 0.019464
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.005490
+Solution count test passed
+Time = 0.033072
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.027561
+Solution count test passed
+Time = 0.073583
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.124331
+Solution count test passed
+Time = 0.189523
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 0.783706
+Solution count test passed
+Time = 0.879447
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 6.996665
+Solution count test passed
+Time = 7.503400
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 49.564989
+Solution count test passed
+Time = 51.598361
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinDummyWinBuffer.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.001826
+Solution count test passed
+Time = 0.020293
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.002282
+Solution count test passed
+Time = 0.016327
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.002311
+Solution count test passed
+Time = 0.026407
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.005749
+Solution count test passed
+Time = 0.049898
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.024310
+Solution count test passed
+Time = 0.083859
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.132487
+Solution count test passed
+Time = 0.230342
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 0.842528
+Solution count test passed
+Time = 0.958155
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 6.699146
+Solution count test passed
+Time = 7.305407
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 46.382260
+Solution count test passed
+Time = 51.117534
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinThreadpoolMemoryMap.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.000420
+Solution count test passed
+Time = 0.087405
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.000501
+Solution count test passed
+Time = 0.256431
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.001213
+Solution count test passed
+Time = 0.153193
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.005720
+Solution count test passed
+Time = 0.223116
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.030081
+Solution count test passed
+Time = 0.182326
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.224999
+Solution count test passed
+Time = 0.495197
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 1.185499
+Solution count test passed
+Time = 1.495025
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 7.026756
+Solution count test passed
+Time = 7.869552
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 46.660335
+Solution count test passed
+Time = 49.811440
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinThreadpoolQueue.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.000296
+Solution count test passed
+Time = 0.002078
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.000689
+Solution count test passed
+Time = 0.002469
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.001477
+Solution count test passed
+Time = 0.003027
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.005532
+Solution count test passed
+Time = 0.007130
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.025498
+Solution count test passed
+Time = 0.029269
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.149568
+Solution count test passed
+Time = 0.151721
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 1.002796
+Solution count test passed
+Time = 1.007505
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 8.777975
+Solution count test passed
+Time = 8.782852
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 54.492276
+Solution count test passed
+Time = 54.494848
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinThreadpoolStdBuffer.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.000456
+Solution count test passed
+Time = 0.019316
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.001116
+Solution count test passed
+Time = 0.012397
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.002094
+Solution count test passed
+Time = 0.023679
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.007273
+Solution count test passed
+Time = 0.044673
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.025512
+Solution count test passed
+Time = 0.080457
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.131586
+Solution count test passed
+Time = 0.211033
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 1.595706
+Solution count test passed
+Time = 1.860270
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 7.436815
+Solution count test passed
+Time = 7.832034
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 48.398499
+Solution count test passed
+Time = 50.382994
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinThreadpoolWinBuffer.exe
+<<< TEST <<<
+
+=============== n = 8 ===============
+Comput time: 0.000236
+Solution count test passed
+Time = 0.019579
+injected solution count = 92
+End of stream has been reached, actual solution count = 92, invalid solution count = 0
+Solution validation passed for dim = 8
+
+=============== n = 9 ===============
+Comput time: 0.000559
+Solution count test passed
+Time = 0.013726
+injected solution count = 352
+End of stream has been reached, actual solution count = 352, invalid solution count = 0
+Solution validation passed for dim = 9
+
+=============== n = 10 ===============
+Comput time: 0.001282
+Solution count test passed
+Time = 0.028422
+injected solution count = 724
+End of stream has been reached, actual solution count = 724, invalid solution count = 0
+Solution validation passed for dim = 10
+
+=============== n = 11 ===============
+Comput time: 0.005134
+Solution count test passed
+Time = 0.045782
+injected solution count = 2680
+End of stream has been reached, actual solution count = 2680, invalid solution count = 0
+Solution validation passed for dim = 11
+
+=============== n = 12 ===============
+Comput time: 0.023347
+Solution count test passed
+Time = 0.089065
+injected solution count = 14200
+End of stream has been reached, actual solution count = 14200, invalid solution count = 0
+Solution validation passed for dim = 12
+
+=============== n = 13 ===============
+Comput time: 0.125203
+Solution count test passed
+Time = 0.212117
+injected solution count = 73712
+End of stream has been reached, actual solution count = 73712, invalid solution count = 0
+Solution validation passed for dim = 13
+
+=============== n = 14 ===============
+Comput time: 1.172979
+Solution count test passed
+Time = 1.494468
+injected solution count = 365596
+End of stream has been reached, actual solution count = 365596, invalid solution count = 0
+Solution validation passed for dim = 14
+
+=============== n = 15 ===============
+Comput time: 7.902399
+Solution count test passed
+Time = 8.443494
+injected solution count = 2279184
+End of stream has been reached, actual solution count = 2279184, invalid solution count = 0
+Solution validation passed for dim = 15
+
+=============== n = 16 ===============
+Comput time: 44.739119
+Solution count test passed
+Time = 48.383075
+injected solution count = 14772512
+End of stream has been reached, actual solution count = 14772512, invalid solution count = 0
+Solution validation passed for dim = 16
+PS J:\repos\NQP\x64\Release>

@@ -34,8 +34,6 @@ nqp_writer * nqp_write_init(nqp_init_args * args)
 
 int nqp_write_start(nqp_start_args * args)
 {
-	//printf("Start queue nqp-io\n");
-
 	if (fopen_s(&_out, args->out_filename, "wb") != 0)
 	{
 		return 1;
@@ -82,21 +80,15 @@ void nqp_write_notify_computation_complete(unsigned long long max_write_count)
 {
 	_max_write_count = max_write_count;
 	_is_computation_completed = 1;
-	//printf(
-	//	"max_write_count updated: %llu; flag updated: %d\n",
-	//	_max_write_count, _is_computation_completed
-	//);
 }
 
 void nqp_write_wait()
 {
 	WaitForSingleObject(_writer_thread, INFINITE);
-	//printf("Finished calculating, wait for write\n");
 }
 
 void nqp_write_end()
 {
-	//printf("End queue nqp-io\n");
 	for (int i = 0; i < _queue_count; i++)
 		nqp_queue_free(_queue_arr[i]);
 }
@@ -171,8 +163,6 @@ static DWORD WINAPI _nqp_ping_write_loop(LPVOID arg)
 			element = NULL;
 		}
 	}
-
-	//printf("_write_count = %llu | _max_write_count = %llu\n", _write_count, _max_write_count);
 
 	return 0;
 }

@@ -53,22 +53,28 @@ int nqp_validate_solutions(
 
 	if (ferror(solution_stream))
 	{
-		printf("Error while reading solutions, actual solution count = %llu, invalid solution count = %llu\n",
-			actual_solution_count, invalid_solution_count);
+		printf(
+			"Error while reading solutions, actual solution count = %llu, invalid solution count = %llu\n",
+			actual_solution_count, invalid_solution_count
+		);
 		return 1;
 	}
 	else if (feof(solution_stream))
 	{
-		printf("End of stream has been reached, actual solution count = %llu, invalid solution count = %llu\n",
-			actual_solution_count, invalid_solution_count);
+		printf(
+			"End of stream has been reached, actual solution count = %llu, invalid solution count = %llu\n",
+			actual_solution_count, invalid_solution_count
+		);
 		return 0;
 	}
 	else
 	{
-		printf("Undefined solution stream state, actual solution count = %llu, invalid solution count = %llu\n",
-			actual_solution_count, invalid_solution_count);
+		printf(
+			"Undefined solution stream state, actual solution count = %llu, invalid solution count = %llu\n",
+			actual_solution_count, invalid_solution_count
+		);
 		return 1;
 	}
 }
 
-void nqp_write_solution(int dim, int * solution, nqp_writer * writer) {}
+void nqp_write_solution(int dim, int * solution, nqp_writer * writer) { abort(); }
