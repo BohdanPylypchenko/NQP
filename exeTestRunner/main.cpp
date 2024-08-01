@@ -11,7 +11,7 @@ int main(void) {
         const auto filename = entry.path().filename().string();
         if (filename.substr(0, 4) == TEST_PREFIX && filename.substr(filename.size() - 4) == ".exe") {
             const auto command = entry.path().string();
-            std::cout << "===> Executing: " << command << '\n';
+            std::cout << "\n===> Executing: " << command << '\n';
             system(command.c_str());
         }
     }

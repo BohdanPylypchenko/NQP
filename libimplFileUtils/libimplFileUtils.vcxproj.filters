@@ -14,10 +14,19 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="int_clen.h">
+    <ClInclude Include="write_concat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="write_concat.h">
+    <ClInclude Include="nqp_inject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nqp_memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nqp_create_temp_file_win.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nqp_create_temp_file_std.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -26,6 +35,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="write_concat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nqp_inject.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nqp_memory.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nqp_create_temp_file_win.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nqp_create_temp_file_std.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

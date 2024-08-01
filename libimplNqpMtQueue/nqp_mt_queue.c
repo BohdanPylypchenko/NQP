@@ -8,15 +8,19 @@
 #include "nqp_queue.h"
 #include "nqp_io_const.h"
 #include "file_buffer_adjust_const.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
+#include "WinapiConfig.h"
 
 #include <stdio.h>
 #include <stdlib.h>
 
 unsigned long long nqp_mt_queue(int dim, int thread_count)
 {
-	nqp_writer ** writer_arr = (nqp_writer **)malloc(dim * sizeof(nqp_writer *));
-	nqp_fail_alloc_check(writer_arr);
+	HANDLE heap = HeapCreate(0, 0, 0);
+	nqp_null_check(heap);
+
+	nqp_writer ** writer_arr = (nqp_writer **)HeapAlloc(heap, 0, dim * sizeof(nqp_writer *));
+	nqp_null_check(writer_arr);
 	for (int i = 0; i < dim; i++)
 	{
 		writer_arr[i] = nqp_write_init(NULL);
@@ -33,7 +37,8 @@ unsigned long long nqp_mt_queue(int dim, int thread_count)
 	unsigned long long s_count = nqp_mt(dim, thread_count, writer_arr, &start_args);
 
 	nqp_write_close(NULL);
-	free(writer_arr);
+
+	HeapDestroy(heap);
 
 	return s_count;
 }

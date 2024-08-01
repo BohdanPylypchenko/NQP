@@ -4,7 +4,7 @@
 #include "nqp_io.h"
 #include "nqp_iteration.h"
 #include "nqp_field.h"
-#include "nqp_fail_alloc_check.h"
+#include "nqp_null_check.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,7 +13,7 @@
 static const DWORD MIN_THREAD_COUNT = 4;
 static const DWORD THREAD_COUNT_MULTIPLIER = 4;
 
-VOID
+static VOID
 CALLBACK
 MyWorkCallback(
     PTP_CALLBACK_INSTANCE Instance,
@@ -27,7 +27,6 @@ MyWorkCallback(
     nqp_state * state = (nqp_state *)Parameter;
     nqp_iteration(1, state);
     double end_time = omp_get_wtime();
-    printf("work finished in %lf\n", end_time - start_time);
 }
 
 unsigned long long nqp_mt(
@@ -48,7 +47,8 @@ unsigned long long nqp_mt(
 
     pool = CreateThreadpool(NULL);
     if (NULL == pool) {
-        printf(
+        fprintf(
+            stderr,
             "CreateThreadpool failed. LastError: %u\n",
             GetLastError()
         );
@@ -58,15 +58,13 @@ unsigned long long nqp_mt(
     SetThreadpoolThreadMaximum(pool, thread_count * THREAD_COUNT_MULTIPLIER);
     bRet = SetThreadpoolThreadMinimum(pool, MIN_THREAD_COUNT);
     if (FALSE == bRet) {
-        printf("SetThreadpoolThreadMinimum failed. LastError: %u\n",
-            GetLastError());
+        fprintf(stderr, "SetThreadpoolThreadMinimum failed. LastError: %u\n", GetLastError());
         abort();
     }
 
     cleanupgroup = CreateThreadpoolCleanupGroup();
     if (NULL == cleanupgroup) {
-        printf("CreateThreadpoolCleanupGroup failed. LastError: %u\n",
-            GetLastError());
+        fprintf(stderr, "CreateThreadpoolCleanupGroup failed. LastError: %u\n", GetLastError());
         abort();
     }
 
@@ -77,15 +75,25 @@ unsigned long long nqp_mt(
         NULL
     );
 
-    nqp_state ** state_ptr_arr = (nqp_state **)malloc(dim * sizeof(nqp_state *));
-    nqp_fail_alloc_check(state_ptr_arr);
+    HANDLE global_heap = HeapCreate(0, 0, 0);
+    nqp_null_check(global_heap);
+
+    nqp_state ** state_ptr_arr = (nqp_state **)HeapAlloc(global_heap, 0, dim * sizeof(nqp_state *));
+    nqp_null_check(state_ptr_arr);
+
+    HANDLE * local_heap_handle_arr = (HANDLE *)HeapAlloc(global_heap, 0, dim * sizeof(HANDLE));
+    nqp_null_check(local_heap_handle_arr);
+
     for (int i = 0; i < dim; i++) {
-        state_ptr_arr[i] = (nqp_state *)malloc(sizeof(nqp_state));
-        nqp_fail_alloc_check(state_ptr_arr[i]);
+        local_heap_handle_arr[i] = HeapCreate(HEAP_NO_SERIALIZE, 0, 0);
+        nqp_null_check(local_heap_handle_arr[i]);
+
+        state_ptr_arr[i] = (nqp_state *)HeapAlloc(local_heap_handle_arr[i], 0, sizeof(nqp_state));
+        nqp_null_check(state_ptr_arr[i]);
         state_ptr_arr[i]->dim = dim;
-        state_ptr_arr[i]->field = field_alloc(dim);
-        state_ptr_arr[i]->queens = (int *)malloc(dim * sizeof(int));
-        nqp_fail_alloc_check(state_ptr_arr[i]->queens);
+        state_ptr_arr[i]->field = field_alloc(dim, local_heap_handle_arr[i]);
+        state_ptr_arr[i]->queens = (int *)HeapAlloc(local_heap_handle_arr[i], 0, dim * sizeof(int));
+        nqp_null_check(state_ptr_arr[i]->queens);
         state_ptr_arr[i]->s_count = 0;
         state_ptr_arr[i]->writer = writer_arr[i];
 
@@ -102,7 +110,8 @@ unsigned long long nqp_mt(
             &CallBackEnviron
         );
         if (NULL == work) {
-            printf(
+            fprintf(
+                stderr,
                 "CreateThreadpoolWork failed. LastError: %u; i = %d\n",
                 GetLastError(),
                 i
@@ -131,11 +140,9 @@ unsigned long long nqp_mt(
     nqp_write_end();
 
     for (int i = 0; i < dim; i++) {
-        field_free(state_ptr_arr[i]->field, dim);
-        free(state_ptr_arr[i]->queens);
-        free(state_ptr_arr[i]);
+        HeapDestroy(local_heap_handle_arr[i]);
     }
-    free(state_ptr_arr);
+    HeapDestroy(global_heap);
 
     return total_s_count;
 }

@@ -1,0 +1,59 @@
+PS J:\repos\NQP\x64\Release> .\exeTestRunner.exe
+
+===> Executing: J:\repos\NQP\x64\Release\testNqp1tBuffer.exe
+Time = 121.872405
+
+===> Executing: J:\repos\NQP\x64\Release\testNqp1tLiArr.exe
+Time = 124.484802
+
+===> Executing: J:\repos\NQP\x64\Release\testNqp1tQueue.exe
+Time = 153.554630
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtOpenMPBuffer.exe
+Comput time: 49.383882
+Time = 96.891520
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtOpenMPLiArr.exe
+Comput time: 52.197956
+Time = 52.908946
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtOpenMPQueue.exe
+Comput time: 57.173155
+Time = 57.175979
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWin32Buffer.exe
+Comput time: 48.041795
+Time = 96.432107
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWin32LiArr.exe
+Comput time: 44.421794
+Time = 45.065827
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWin32Queue.exe
+Comput time: 55.106552
+Time = 55.109795
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinDummyBuffer.exe
+Comput time: 49.261624
+Time = 98.151910
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinDummyLiArr.exe
+Comput time: 48.330923
+Time = 48.866556
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinDummyQueue.exe
+Comput time: 50.573559
+Time = 50.577198
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinThreadpoolBuffer.exe
+Comput time: 48.119309
+Time = 96.436425
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinThreadpoolLiArr.exe
+Comput time: 46.282663
+Time = 46.878222
+
+===> Executing: J:\repos\NQP\x64\Release\testNqpMtWinThreadpoolQueue.exe
+Comput time: 54.925145
+Time = 54.927904
+PS J:\repos\NQP\x64\Release>
