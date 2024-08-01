@@ -6,7 +6,7 @@
 
 static const double MEMORY_SAFETY_COEFFICIENT = 0.75;
 
-unsigned long long get_available_physical_memory_bytes(void)
+size_t get_available_physical_memory_bytes(void)
 {
     MEMORYSTATUSEX memorystatusex;
     memorystatusex.dwLength = sizeof(memorystatusex);

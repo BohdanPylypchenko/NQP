@@ -13,7 +13,7 @@
 static const DWORD MIN_THREAD_COUNT = 4;
 static const DWORD THREAD_COUNT_MULTIPLIER = 4;
 
-VOID
+static VOID
 CALLBACK
 MyWorkCallback(
     PTP_CALLBACK_INSTANCE Instance,
@@ -27,7 +27,6 @@ MyWorkCallback(
     nqp_state * state = (nqp_state *)Parameter;
     nqp_iteration(1, state);
     double end_time = omp_get_wtime();
-    //printf("work finished in %lf\n", end_time - start_time);
 }
 
 unsigned long long nqp_mt(
@@ -59,13 +58,13 @@ unsigned long long nqp_mt(
     SetThreadpoolThreadMaximum(pool, thread_count * THREAD_COUNT_MULTIPLIER);
     bRet = SetThreadpoolThreadMinimum(pool, MIN_THREAD_COUNT);
     if (FALSE == bRet) {
-        //printf("SetThreadpoolThreadMinimum failed. LastError: %u\n", GetLastError());
+        fprintf(stderr, "SetThreadpoolThreadMinimum failed. LastError: %u\n", GetLastError());
         abort();
     }
 
     cleanupgroup = CreateThreadpoolCleanupGroup();
     if (NULL == cleanupgroup) {
-        //printf("CreateThreadpoolCleanupGroup failed. LastError: %u\n", GetLastError());
+        fprintf(stderr, "CreateThreadpoolCleanupGroup failed. LastError: %u\n", GetLastError());
         abort();
     }
 

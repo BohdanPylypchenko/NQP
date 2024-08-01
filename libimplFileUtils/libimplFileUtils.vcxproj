@@ -148,14 +148,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="nqp_create_temp_file_std.h" />
+    <ClInclude Include="nqp_create_temp_file_win.h" />
     <ClInclude Include="nqp_memory.h" />
     <ClInclude Include="nqp_inject.h" />
-    <ClInclude Include="int_clen.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="nqp_word_split_concat.h" />
     <ClInclude Include="write_concat.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="nqp_create_temp_file_std.c" />
+    <ClCompile Include="nqp_create_temp_file_win.c" />
     <ClCompile Include="nqp_inject.c" />
     <ClCompile Include="nqp_memory.c" />
     <ClCompile Include="pch.c">
@@ -164,7 +166,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="nqp_word_split_concat.c" />
     <ClCompile Include="write_concat.c" />
   </ItemGroup>
   <ItemGroup>

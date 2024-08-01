@@ -6,7 +6,6 @@
 #include "nqp_io_const.h"
 #include "nqp_null_check.h"
 #include "WinapiConfig.h"
-#include "nqp_word_split_concat.h"
 
 #include <stdio.h>
 
@@ -27,7 +26,7 @@ int write_concat(
 		BUFSIZE_11_SINGLE_FILE, BUFSIZE_15_SINGLE_FILE, BUFSIZE_BIG_SINGLE_FILE) != 0)
 	{
 		fclose(out);
-		fprintf(stderr, "Error: can't resize terminal file buffer size\n");
+		fprintf(stderr, "Error: can't resize terminal file memory_map size\n");
 		return -1;
 	}
 

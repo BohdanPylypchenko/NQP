@@ -7,13 +7,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplFileBufferAdjust", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplFileUtils", "libimplFileUtils\libimplFileUtils.vcxproj", "{E768402B-6037-47F3-BD59-3E496BD8DD81}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpBufferIO", "libimplNqpBufferIO\libimplNqpBufferIO.vcxproj", "{0C364C73-A83B-4E82-929D-162CADD9BAA8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpMemoryMapIO", "libimplNqpMemoryMapIO\libimplNqpMemoryMapIO.vcxproj", "{0C364C73-A83B-4E82-929D-162CADD9BAA8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpQueueIO", "libimplNqpQueueIO\libimplNqpQueueIO.vcxproj", "{30D6A3C3-1754-4F47-B7EA-41883CD5236F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpLiArrAdjust", "libimplNqpLiArrAdjust\libimplNqpLiArrAdjust.vcxproj", "{9E94A523-BC6A-4D6C-A136-46190D2FEF15}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpLiArrIO", "libimplNqpLiArrIO\libimplNqpLiArrIO.vcxproj", "{57264852-36FB-41FC-87D2-87A626BEDD73}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpWinBufferIO", "libimplNqpWinBufferIO\libimplNqpWinBufferIO.vcxproj", "{57264852-36FB-41FC-87D2-87A626BEDD73}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpIteration", "libimplNqpIteration\libimplNqpIteration.vcxproj", "{83296A12-B7F0-4CDF-807F-3E30605EB7C0}"
 EndProject
@@ -21,7 +19,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpDimThreadcountCon
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqp1t", "libimplNqp1t\libimplNqp1t.vcxproj", "{7DB8523D-A91D-4569-8E2E-A6CB0998B92C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqp1tBuffer", "dllNqp1tBuffer\dllNqp1tBuffer.vcxproj", "{32BB399B-D32D-4FCB-820F-973F5C6BB996}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqp1tMemoryMap", "dllNqp1tMemoryMap\dllNqp1tMemoryMap.vcxproj", "{32BB399B-D32D-4FCB-820F-973F5C6BB996}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libhdrWinapiConfig", "libhdrWinapiConfig\libhdrWinapiConfig.vcxproj", "{F32B802A-C814-4324-BB7A-BB2415D8A5E7}"
 EndProject
@@ -31,7 +29,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libhdrNqpIO", "libhdrNqpIO\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libhdrNqp1t", "libhdrNqp1t\libhdrNqp1t.vcxproj", "{FA931B48-E381-42FE-8E3B-44A980383FC6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqp1tLiArr", "dllNqp1tLiArr\dllNqp1tLiArr.vcxproj", "{D59EFDF8-C68D-4F96-B753-627D8EE0AC9B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqp1tWinBuffer", "dllNqp1tWinBuffer\dllNqp1tWinBuffer.vcxproj", "{D59EFDF8-C68D-4F96-B753-627D8EE0AC9B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqp1tQueue", "dllNqp1tQueue\dllNqp1tQueue.vcxproj", "{FF0D032F-FFF5-4663-966D-67F90F741583}"
 EndProject
@@ -41,9 +39,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpTest", "libimplNq
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpSolutionValidator", "libimplNqpSolutionValidator\libimplNqpSolutionValidator.vcxproj", "{9B34E24D-56F6-4DDA-87C7-1005A22622F0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqp1tBuffer", "testNqp1tBuffer\testNqp1tBuffer.vcxproj", "{0584DCB6-3AF7-4C50-A352-DF7AE24B0442}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqp1tMemoryMap", "testNqp1tMemoryMap\testNqp1tMemoryMap.vcxproj", "{0584DCB6-3AF7-4C50-A352-DF7AE24B0442}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqp1tLiArr", "testNqp1tLiArr\testNqp1tLiArr.vcxproj", "{6FAC3B18-24F1-4A8A-824B-D78E790171D0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqp1tWinBuffer", "testNqp1tWinBuffer\testNqp1tWinBuffer.vcxproj", "{6FAC3B18-24F1-4A8A-824B-D78E790171D0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqp1tQueue", "testNqp1tQueue\testNqp1tQueue.vcxproj", "{56091992-A559-45C3-818E-8C7788154347}"
 EndProject
@@ -51,33 +49,33 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libhdrNqpMt", "libhdrNqpMt\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpMtOpenMP", "libimplNqpMtOpenMP\libimplNqpMtOpenMP.vcxproj", "{0E610816-6713-4B8B-9976-54FFC77F62E4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpMtBuffer", "libimplNqpMtBuffer\libimplNqpMtBuffer.vcxproj", "{9DCB5E50-A739-4307-A72D-43CF9058EADE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpMtMemoryMap", "libimplNqpMtMemoryMap\libimplNqpMtMemoryMap.vcxproj", "{9DCB5E50-A739-4307-A72D-43CF9058EADE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpMtLiArr", "libimplNqpMtLiArr\libimplNqpMtLiArr.vcxproj", "{BAE06D4F-988C-4816-A3DC-11596B08B037}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpMtWinBuffer", "libimplNqpMtWinBuffer\libimplNqpMtWinBuffer.vcxproj", "{BAE06D4F-988C-4816-A3DC-11596B08B037}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpMtQueue", "libimplNqpMtQueue\libimplNqpMtQueue.vcxproj", "{DDDA9C85-B414-4DF8-A02D-11BEA7EADB09}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtOpenMPBuffer", "dllNqpMtOpenMPBuffer\dllNqpMtOpenMPBuffer.vcxproj", "{A67BC8B3-C6E4-45A9-87A9-277747B7D62F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtOpenMPMemoryMap", "dllNqpMtOpenMPMemoryMap\dllNqpMtOpenMPMemoryMap.vcxproj", "{A67BC8B3-C6E4-45A9-87A9-277747B7D62F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtOpenMPLiArr", "dllNqpMtOpenMPLiArr\dllNqpMtOpenMPLiArr.vcxproj", "{A1E7613A-615F-494F-860F-EA4160C9E25D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtOpenMPWinBuffer", "dllNqpMtOpenMPWinBuffer\dllNqpMtOpenMPWinBuffer.vcxproj", "{A1E7613A-615F-494F-860F-EA4160C9E25D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtOpenMPQueue", "dllNqpMtOpenMPQueue\dllNqpMtOpenMPQueue.vcxproj", "{0B9CFE19-547F-4BEB-93B3-DAD2DD70D4A5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtOpenMPBuffer", "testNqpMtOpenMPBuffer\testNqpMtOpenMPBuffer.vcxproj", "{CF94E698-545F-4D88-AA25-28D3DD2DD5F0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtOpenMPMemoryMap", "testNqpMtOpenMPMemoryMap\testNqpMtOpenMPMemoryMap.vcxproj", "{CF94E698-545F-4D88-AA25-28D3DD2DD5F0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtOpenMPLiArr", "testNqpMtOpenMPLiArr\testNqpMtOpenMPLiArr.vcxproj", "{9CBD2CF4-CB36-4905-A7BA-06FD98EE3F74}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtOpenMPWinBuffer", "testNqpMtOpenMPWinBuffer\testNqpMtOpenMPWinBuffer.vcxproj", "{9CBD2CF4-CB36-4905-A7BA-06FD98EE3F74}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtOpenMPQueue", "testNqpMtOpenMPQueue\testNqpMtOpenMPQueue.vcxproj", "{D90D7355-FD6D-439B-A347-D143426B73AB}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpMtWin32", "libimplNqpMtWin32\libimplNqpMtWin32.vcxproj", "{968A39D3-495F-4F7A-9E2E-36111116255F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWin32Buffer", "dllNqpMtWin32Buffer\dllNqpMtWin32Buffer.vcxproj", "{629C3FF1-B2FD-44B4-BC05-275BADBF01F4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWin32MemoryMap", "dllNqpMtWin32MemoryMap\dllNqpMtWin32MemoryMap.vcxproj", "{629C3FF1-B2FD-44B4-BC05-275BADBF01F4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWin32Buffer", "testNqpMtWin32Buffer\testNqpMtWin32Buffer.vcxproj", "{5E61DB6C-4E84-44B2-AE46-65EC5560770D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWin32MemoryMap", "testNqpMtWin32MemoryMap\testNqpMtWin32MemoryMap.vcxproj", "{5E61DB6C-4E84-44B2-AE46-65EC5560770D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWin32LiArr", "dllNqpMtWin32LiArr\dllNqpMtWin32LiArr.vcxproj", "{F2524CCF-C619-42E1-BBF6-22B42341426D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWin32WinBuffer", "dllNqpMtWin32WinBuffer\dllNqpMtWin32WinBuffer.vcxproj", "{F2524CCF-C619-42E1-BBF6-22B42341426D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWin32LiArr", "testNqpMtWin32LiArr\testNqpMtWin32LiArr.vcxproj", "{642CA42A-4AF6-4B2B-A960-814E966B08D2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWin32WinBuffer", "testNqpMtWin32WinBuffer\testNqpMtWin32WinBuffer.vcxproj", "{642CA42A-4AF6-4B2B-A960-814E966B08D2}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWin32Queue", "dllNqpMtWin32Queue\dllNqpMtWin32Queue.vcxproj", "{205A0C2D-D284-4931-84AE-0273C53D79AB}"
 EndProject
@@ -85,31 +83,55 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWin32Queue", "test
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpMtWinThreadpool", "libimplNqpMtWinThreadpool\libimplNqpMtWinThreadpool.vcxproj", "{A24633D7-3775-470C-A723-B741AD305A36}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWinThreadpoolBuffer", "dllNqpMtWinThreadpoolBuffer\dllNqpMtWinThreadpoolBuffer.vcxproj", "{6F40EE9F-7749-4ABA-8C88-C0C505DA0560}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWinThreadpoolMemoryMap", "dllNqpMtWinThreadpoolMemoryMap\dllNqpMtWinThreadpoolMemoryMap.vcxproj", "{6F40EE9F-7749-4ABA-8C88-C0C505DA0560}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWinThreadpoolLiArr", "dllNqpMtWinThreadpoolLiArr\dllNqpMtWinThreadpoolLiArr.vcxproj", "{7912BE8A-4D29-40E5-8E13-D725690A8B07}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWinThreadpoolWinBuffer", "dllNqpMtWinThreadpoolWinBuffer\dllNqpMtWinThreadpoolWinBuffer.vcxproj", "{7912BE8A-4D29-40E5-8E13-D725690A8B07}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWinThreadpoolQueue", "dllNqpMtWinThreadpoolQueue\dllNqpMtWinThreadpoolQueue.vcxproj", "{4FC937E4-CD54-4884-84DC-ECBFF2099450}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWinThreadpoolBuffer", "testNqpMtWinThreadpoolBuffer\testNqpMtWinThreadpoolBuffer.vcxproj", "{7BD2ABC0-D332-4A38-B2F5-BB63D2ECE0B6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWinThreadpoolMemoryMap", "testNqpMtWinThreadpoolMemoryMap\testNqpMtWinThreadpoolMemoryMap.vcxproj", "{7BD2ABC0-D332-4A38-B2F5-BB63D2ECE0B6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWinThreadpoolLiArr", "testNqpMtWinThreadpoolLiArr\testNqpMtWinThreadpoolLiArr.vcxproj", "{01A6B533-D6C0-4785-808F-DB25B07BC456}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWinThreadpoolWinBuffer", "testNqpMtWinThreadpoolWinBuffer\testNqpMtWinThreadpoolWinBuffer.vcxproj", "{01A6B533-D6C0-4785-808F-DB25B07BC456}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWinThreadpoolQueue", "testNqpMtWinThreadpoolQueue\testNqpMtWinThreadpoolQueue.vcxproj", "{84E2F9FA-561B-4F5D-836C-C68FCA0D854C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpMtWinDummy", "libimplNqpMtWinDummy\libimplNqpMtWinDummy.vcxproj", "{D32D738A-7347-4685-AD9C-59029AE69E09}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWinDummyBuffer", "dllNqpMtWinDummyBuffer\dllNqpMtWinDummyBuffer.vcxproj", "{DE45FBA8-976F-4739-8E32-E02E0FE2E438}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWinDummyMemoryMap", "dllNqpMtWinDummyMemoryMap\dllNqpMtWinDummyMemoryMap.vcxproj", "{DE45FBA8-976F-4739-8E32-E02E0FE2E438}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWinDummyLiArr", "dllNqpMtWinDummyLiArr\dllNqpMtWinDummyLiArr.vcxproj", "{C9D5CC64-295A-43B8-9BDA-0E56EA873480}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWinDummyWinBuffer", "dllNqpMtWinDummyWinBuffer\dllNqpMtWinDummyWinBuffer.vcxproj", "{C9D5CC64-295A-43B8-9BDA-0E56EA873480}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWinDummyQueue", "dllNqpMtWinDummyQueue\dllNqpMtWinDummyQueue.vcxproj", "{6FEBD73C-648A-4E79-9C26-74A892CEBCC4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWinDummyBuffer", "testNqpMtWinDummyBuffer\testNqpMtWinDummyBuffer.vcxproj", "{03D8ED00-C562-40AF-97C5-5F2A76724F2E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWinDummyMemoryMap", "testNqpMtWinDummyMemoryMap\testNqpMtWinDummyMemoryMap.vcxproj", "{03D8ED00-C562-40AF-97C5-5F2A76724F2E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWinDummyLiArr", "testNqpMtWinDummyLiArr\testNqpMtWinDummyLiArr.vcxproj", "{26224F8D-571B-4144-BEC7-24B4ABB68EC4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWinDummyWinBuffer", "testNqpMtWinDummyWinBuffer\testNqpMtWinDummyWinBuffer.vcxproj", "{26224F8D-571B-4144-BEC7-24B4ABB68EC4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWinDummyQueue", "testNqpMtWinDummyQueue\testNqpMtWinDummyQueue.vcxproj", "{24B56C3B-C5CB-427D-A2AA-6D539A933254}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpStdBufferIO", "libimplNqpStdBufferIO\libimplNqpStdBufferIO.vcxproj", "{07A2E98D-2A12-4F8D-AC21-02A918ED91E0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqp1tStdBuffer", "dllNqp1tStdBuffer\dllNqp1tStdBuffer.vcxproj", "{2CFF52A3-5601-432A-BEAF-3415275AAC64}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqp1tStdBuffer", "testNqp1tStdBuffer\testNqp1tStdBuffer.vcxproj", "{462EB0CB-E2EB-4DBF-AAF6-4F055278EDEE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libimplNqpMtStdBuffer", "libimplNqpMtStdBuffer\libimplNqpMtStdBuffer.vcxproj", "{018632B2-E5E7-41FC-88A3-558AB18E5C35}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtOpenMPStdBuffer", "dllNqpMtOpenMPStdBuffer\dllNqpMtOpenMPStdBuffer.vcxproj", "{F667D015-AE2C-454A-86DA-4C6D2105348E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWin32StdBuffer", "dllNqpMtWin32StdBuffer\dllNqpMtWin32StdBuffer.vcxproj", "{2EA12F5C-0AE5-49F1-9BDE-30E82EB99DB8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWinDummyStdBuffer", "dllNqpMtWinDummyStdBuffer\dllNqpMtWinDummyStdBuffer.vcxproj", "{BBAA9962-7228-4934-BA17-71E7E8B47F13}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dllNqpMtWinThreadpoolStdBuffer", "dllNqpMtWinThreadpoolStdBuffer\dllNqpMtWinThreadpoolStdBuffer.vcxproj", "{8A0A6622-D468-477C-9D58-999E1B0CAE14}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtOpenMPStdBuffer", "testNqpMtOpenMPStdBuffer\testNqpMtOpenMPStdBuffer.vcxproj", "{2816BBDF-7B5F-4114-A071-7857846B5E10}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWin32StdBuffer", "testNqpMtWin32StdBuffer\testNqpMtWin32StdBuffer.vcxproj", "{07F0C986-B0F1-4399-9D4B-D08BB48A7ED5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWinDummyStdBuffer", "testNqpMtWinDummyStdBuffer\testNqpMtWinDummyStdBuffer.vcxproj", "{3A72E957-6E53-402E-9F67-A67206782412}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testNqpMtWinThreadpoolStdBuffer", "testNqpMtWinThreadpoolStdBuffer\testNqpMtWinThreadpoolStdBuffer.vcxproj", "{D5B1AD02-8093-47B8-BB10-E97DC8E2FE26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -151,14 +173,6 @@ Global
 		{30D6A3C3-1754-4F47-B7EA-41883CD5236F}.Release|x64.Build.0 = Release|x64
 		{30D6A3C3-1754-4F47-B7EA-41883CD5236F}.Release|x86.ActiveCfg = Release|Win32
 		{30D6A3C3-1754-4F47-B7EA-41883CD5236F}.Release|x86.Build.0 = Release|Win32
-		{9E94A523-BC6A-4D6C-A136-46190D2FEF15}.Debug|x64.ActiveCfg = Debug|x64
-		{9E94A523-BC6A-4D6C-A136-46190D2FEF15}.Debug|x64.Build.0 = Debug|x64
-		{9E94A523-BC6A-4D6C-A136-46190D2FEF15}.Debug|x86.ActiveCfg = Debug|Win32
-		{9E94A523-BC6A-4D6C-A136-46190D2FEF15}.Debug|x86.Build.0 = Debug|Win32
-		{9E94A523-BC6A-4D6C-A136-46190D2FEF15}.Release|x64.ActiveCfg = Release|x64
-		{9E94A523-BC6A-4D6C-A136-46190D2FEF15}.Release|x64.Build.0 = Release|x64
-		{9E94A523-BC6A-4D6C-A136-46190D2FEF15}.Release|x86.ActiveCfg = Release|Win32
-		{9E94A523-BC6A-4D6C-A136-46190D2FEF15}.Release|x86.Build.0 = Release|Win32
 		{57264852-36FB-41FC-87D2-87A626BEDD73}.Debug|x64.ActiveCfg = Debug|x64
 		{57264852-36FB-41FC-87D2-87A626BEDD73}.Debug|x64.Build.0 = Debug|x64
 		{57264852-36FB-41FC-87D2-87A626BEDD73}.Debug|x86.ActiveCfg = Debug|Win32
@@ -551,6 +565,102 @@ Global
 		{24B56C3B-C5CB-427D-A2AA-6D539A933254}.Release|x64.Build.0 = Release|x64
 		{24B56C3B-C5CB-427D-A2AA-6D539A933254}.Release|x86.ActiveCfg = Release|Win32
 		{24B56C3B-C5CB-427D-A2AA-6D539A933254}.Release|x86.Build.0 = Release|Win32
+		{07A2E98D-2A12-4F8D-AC21-02A918ED91E0}.Debug|x64.ActiveCfg = Debug|x64
+		{07A2E98D-2A12-4F8D-AC21-02A918ED91E0}.Debug|x64.Build.0 = Debug|x64
+		{07A2E98D-2A12-4F8D-AC21-02A918ED91E0}.Debug|x86.ActiveCfg = Debug|Win32
+		{07A2E98D-2A12-4F8D-AC21-02A918ED91E0}.Debug|x86.Build.0 = Debug|Win32
+		{07A2E98D-2A12-4F8D-AC21-02A918ED91E0}.Release|x64.ActiveCfg = Release|x64
+		{07A2E98D-2A12-4F8D-AC21-02A918ED91E0}.Release|x64.Build.0 = Release|x64
+		{07A2E98D-2A12-4F8D-AC21-02A918ED91E0}.Release|x86.ActiveCfg = Release|Win32
+		{07A2E98D-2A12-4F8D-AC21-02A918ED91E0}.Release|x86.Build.0 = Release|Win32
+		{2CFF52A3-5601-432A-BEAF-3415275AAC64}.Debug|x64.ActiveCfg = Debug|x64
+		{2CFF52A3-5601-432A-BEAF-3415275AAC64}.Debug|x64.Build.0 = Debug|x64
+		{2CFF52A3-5601-432A-BEAF-3415275AAC64}.Debug|x86.ActiveCfg = Debug|Win32
+		{2CFF52A3-5601-432A-BEAF-3415275AAC64}.Debug|x86.Build.0 = Debug|Win32
+		{2CFF52A3-5601-432A-BEAF-3415275AAC64}.Release|x64.ActiveCfg = Release|x64
+		{2CFF52A3-5601-432A-BEAF-3415275AAC64}.Release|x64.Build.0 = Release|x64
+		{2CFF52A3-5601-432A-BEAF-3415275AAC64}.Release|x86.ActiveCfg = Release|Win32
+		{2CFF52A3-5601-432A-BEAF-3415275AAC64}.Release|x86.Build.0 = Release|Win32
+		{462EB0CB-E2EB-4DBF-AAF6-4F055278EDEE}.Debug|x64.ActiveCfg = Debug|x64
+		{462EB0CB-E2EB-4DBF-AAF6-4F055278EDEE}.Debug|x64.Build.0 = Debug|x64
+		{462EB0CB-E2EB-4DBF-AAF6-4F055278EDEE}.Debug|x86.ActiveCfg = Debug|Win32
+		{462EB0CB-E2EB-4DBF-AAF6-4F055278EDEE}.Debug|x86.Build.0 = Debug|Win32
+		{462EB0CB-E2EB-4DBF-AAF6-4F055278EDEE}.Release|x64.ActiveCfg = Release|x64
+		{462EB0CB-E2EB-4DBF-AAF6-4F055278EDEE}.Release|x64.Build.0 = Release|x64
+		{462EB0CB-E2EB-4DBF-AAF6-4F055278EDEE}.Release|x86.ActiveCfg = Release|Win32
+		{462EB0CB-E2EB-4DBF-AAF6-4F055278EDEE}.Release|x86.Build.0 = Release|Win32
+		{018632B2-E5E7-41FC-88A3-558AB18E5C35}.Debug|x64.ActiveCfg = Debug|x64
+		{018632B2-E5E7-41FC-88A3-558AB18E5C35}.Debug|x64.Build.0 = Debug|x64
+		{018632B2-E5E7-41FC-88A3-558AB18E5C35}.Debug|x86.ActiveCfg = Debug|Win32
+		{018632B2-E5E7-41FC-88A3-558AB18E5C35}.Debug|x86.Build.0 = Debug|Win32
+		{018632B2-E5E7-41FC-88A3-558AB18E5C35}.Release|x64.ActiveCfg = Release|x64
+		{018632B2-E5E7-41FC-88A3-558AB18E5C35}.Release|x64.Build.0 = Release|x64
+		{018632B2-E5E7-41FC-88A3-558AB18E5C35}.Release|x86.ActiveCfg = Release|Win32
+		{018632B2-E5E7-41FC-88A3-558AB18E5C35}.Release|x86.Build.0 = Release|Win32
+		{F667D015-AE2C-454A-86DA-4C6D2105348E}.Debug|x64.ActiveCfg = Debug|x64
+		{F667D015-AE2C-454A-86DA-4C6D2105348E}.Debug|x64.Build.0 = Debug|x64
+		{F667D015-AE2C-454A-86DA-4C6D2105348E}.Debug|x86.ActiveCfg = Debug|Win32
+		{F667D015-AE2C-454A-86DA-4C6D2105348E}.Debug|x86.Build.0 = Debug|Win32
+		{F667D015-AE2C-454A-86DA-4C6D2105348E}.Release|x64.ActiveCfg = Release|x64
+		{F667D015-AE2C-454A-86DA-4C6D2105348E}.Release|x64.Build.0 = Release|x64
+		{F667D015-AE2C-454A-86DA-4C6D2105348E}.Release|x86.ActiveCfg = Release|Win32
+		{F667D015-AE2C-454A-86DA-4C6D2105348E}.Release|x86.Build.0 = Release|Win32
+		{2EA12F5C-0AE5-49F1-9BDE-30E82EB99DB8}.Debug|x64.ActiveCfg = Debug|x64
+		{2EA12F5C-0AE5-49F1-9BDE-30E82EB99DB8}.Debug|x64.Build.0 = Debug|x64
+		{2EA12F5C-0AE5-49F1-9BDE-30E82EB99DB8}.Debug|x86.ActiveCfg = Debug|Win32
+		{2EA12F5C-0AE5-49F1-9BDE-30E82EB99DB8}.Debug|x86.Build.0 = Debug|Win32
+		{2EA12F5C-0AE5-49F1-9BDE-30E82EB99DB8}.Release|x64.ActiveCfg = Release|x64
+		{2EA12F5C-0AE5-49F1-9BDE-30E82EB99DB8}.Release|x64.Build.0 = Release|x64
+		{2EA12F5C-0AE5-49F1-9BDE-30E82EB99DB8}.Release|x86.ActiveCfg = Release|Win32
+		{2EA12F5C-0AE5-49F1-9BDE-30E82EB99DB8}.Release|x86.Build.0 = Release|Win32
+		{BBAA9962-7228-4934-BA17-71E7E8B47F13}.Debug|x64.ActiveCfg = Debug|x64
+		{BBAA9962-7228-4934-BA17-71E7E8B47F13}.Debug|x64.Build.0 = Debug|x64
+		{BBAA9962-7228-4934-BA17-71E7E8B47F13}.Debug|x86.ActiveCfg = Debug|Win32
+		{BBAA9962-7228-4934-BA17-71E7E8B47F13}.Debug|x86.Build.0 = Debug|Win32
+		{BBAA9962-7228-4934-BA17-71E7E8B47F13}.Release|x64.ActiveCfg = Release|x64
+		{BBAA9962-7228-4934-BA17-71E7E8B47F13}.Release|x64.Build.0 = Release|x64
+		{BBAA9962-7228-4934-BA17-71E7E8B47F13}.Release|x86.ActiveCfg = Release|Win32
+		{BBAA9962-7228-4934-BA17-71E7E8B47F13}.Release|x86.Build.0 = Release|Win32
+		{8A0A6622-D468-477C-9D58-999E1B0CAE14}.Debug|x64.ActiveCfg = Debug|x64
+		{8A0A6622-D468-477C-9D58-999E1B0CAE14}.Debug|x64.Build.0 = Debug|x64
+		{8A0A6622-D468-477C-9D58-999E1B0CAE14}.Debug|x86.ActiveCfg = Debug|Win32
+		{8A0A6622-D468-477C-9D58-999E1B0CAE14}.Debug|x86.Build.0 = Debug|Win32
+		{8A0A6622-D468-477C-9D58-999E1B0CAE14}.Release|x64.ActiveCfg = Release|x64
+		{8A0A6622-D468-477C-9D58-999E1B0CAE14}.Release|x64.Build.0 = Release|x64
+		{8A0A6622-D468-477C-9D58-999E1B0CAE14}.Release|x86.ActiveCfg = Release|Win32
+		{8A0A6622-D468-477C-9D58-999E1B0CAE14}.Release|x86.Build.0 = Release|Win32
+		{2816BBDF-7B5F-4114-A071-7857846B5E10}.Debug|x64.ActiveCfg = Debug|x64
+		{2816BBDF-7B5F-4114-A071-7857846B5E10}.Debug|x64.Build.0 = Debug|x64
+		{2816BBDF-7B5F-4114-A071-7857846B5E10}.Debug|x86.ActiveCfg = Debug|Win32
+		{2816BBDF-7B5F-4114-A071-7857846B5E10}.Debug|x86.Build.0 = Debug|Win32
+		{2816BBDF-7B5F-4114-A071-7857846B5E10}.Release|x64.ActiveCfg = Release|x64
+		{2816BBDF-7B5F-4114-A071-7857846B5E10}.Release|x64.Build.0 = Release|x64
+		{2816BBDF-7B5F-4114-A071-7857846B5E10}.Release|x86.ActiveCfg = Release|Win32
+		{2816BBDF-7B5F-4114-A071-7857846B5E10}.Release|x86.Build.0 = Release|Win32
+		{07F0C986-B0F1-4399-9D4B-D08BB48A7ED5}.Debug|x64.ActiveCfg = Debug|x64
+		{07F0C986-B0F1-4399-9D4B-D08BB48A7ED5}.Debug|x64.Build.0 = Debug|x64
+		{07F0C986-B0F1-4399-9D4B-D08BB48A7ED5}.Debug|x86.ActiveCfg = Debug|Win32
+		{07F0C986-B0F1-4399-9D4B-D08BB48A7ED5}.Debug|x86.Build.0 = Debug|Win32
+		{07F0C986-B0F1-4399-9D4B-D08BB48A7ED5}.Release|x64.ActiveCfg = Release|x64
+		{07F0C986-B0F1-4399-9D4B-D08BB48A7ED5}.Release|x64.Build.0 = Release|x64
+		{07F0C986-B0F1-4399-9D4B-D08BB48A7ED5}.Release|x86.ActiveCfg = Release|Win32
+		{07F0C986-B0F1-4399-9D4B-D08BB48A7ED5}.Release|x86.Build.0 = Release|Win32
+		{3A72E957-6E53-402E-9F67-A67206782412}.Debug|x64.ActiveCfg = Debug|x64
+		{3A72E957-6E53-402E-9F67-A67206782412}.Debug|x64.Build.0 = Debug|x64
+		{3A72E957-6E53-402E-9F67-A67206782412}.Debug|x86.ActiveCfg = Debug|Win32
+		{3A72E957-6E53-402E-9F67-A67206782412}.Debug|x86.Build.0 = Debug|Win32
+		{3A72E957-6E53-402E-9F67-A67206782412}.Release|x64.ActiveCfg = Release|x64
+		{3A72E957-6E53-402E-9F67-A67206782412}.Release|x64.Build.0 = Release|x64
+		{3A72E957-6E53-402E-9F67-A67206782412}.Release|x86.ActiveCfg = Release|Win32
+		{3A72E957-6E53-402E-9F67-A67206782412}.Release|x86.Build.0 = Release|Win32
+		{D5B1AD02-8093-47B8-BB10-E97DC8E2FE26}.Debug|x64.ActiveCfg = Debug|x64
+		{D5B1AD02-8093-47B8-BB10-E97DC8E2FE26}.Debug|x64.Build.0 = Debug|x64
+		{D5B1AD02-8093-47B8-BB10-E97DC8E2FE26}.Debug|x86.ActiveCfg = Debug|Win32
+		{D5B1AD02-8093-47B8-BB10-E97DC8E2FE26}.Debug|x86.Build.0 = Debug|Win32
+		{D5B1AD02-8093-47B8-BB10-E97DC8E2FE26}.Release|x64.ActiveCfg = Release|x64
+		{D5B1AD02-8093-47B8-BB10-E97DC8E2FE26}.Release|x64.Build.0 = Release|x64
+		{D5B1AD02-8093-47B8-BB10-E97DC8E2FE26}.Release|x86.ActiveCfg = Release|Win32
+		{D5B1AD02-8093-47B8-BB10-E97DC8E2FE26}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
